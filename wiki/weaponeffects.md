@@ -1,119 +1,120 @@
-# Legendäre Waffeneffekte
+# <ins>Legendäre Waffeneffekte</ins>
 
-### Kirito
-**Betäubendes Horizontalfeld**
-> Gewährt nach Treffer mit Kombo und Druckwelle eine Chance, den Feind zu betäuben.
+### <ins>Kirito</ins>
 
-**TödlicherSchlag mit Überladung**
-> Erhöht die Aufladungsstufe um 1
+- **Betäubendes Horizontalfeld**
+<br>Gewährt nach Treffer mit Kombo und Druckwelle eine Chance, den Feind zu betäuben.
 
-**Betäubendes Horizontalfeld**
-> Gewährt nach Treffer mit Kombo und Druckwelle eine Chance den Feind zu beträuben.
+- **TödlicherSchlag mit Überladung**
+<br>Erhöht die Aufladungsstufe um 1
 
-### Asuna
-**Delta-Frostangriff**
-> Gewärt nach Treffer mit Kombo und Druckwelle eine Chance, den Feind einzufrieren.
+- **Betäubendes Horizontalfeld**
+<br>Gewährt nach Treffer mit Kombo und Druckwelle eine Chance den Feind zu beträuben.
 
-**Kombo+ für Strahlender Stoß**
-> Reduziert den Schaden, aber die Stoßkombo trifft öfter.
+### <ins>Asuna</ins>
+ - **Delta-Frostangriff**
+<br> Gewärt nach Treffer mit Kombo und Druckwelle eine Chance, den Feind einzufrieren.
 
-### Lisbeth
-**Herzschlagbrecher mit Aufladung**
-> Lädt automatisch auf und greift an. Erhöht den Sachden, du bist aber länger verwundbar.
+ - **Kombo+ für Strahlender Stoß**
+<br> Reduziert den Schaden, aber die Stoßkombo trifft öfter.
 
-**Donnerlawinen-Blitzsperrfeuer**
-> Feuert gleichzeitig mehrere Blitzangriffe ab. verringert jedoch die Reichweite.
+### <ins>Lisbeth</ins>
+ - **Herzschlagbrecher mit Aufladung**
+<br> Lädt automatisch auf und greift an. Erhöht den Sachden, du bist aber länger verwundbar.
 
-### Klein
-**Zekkuu mit Überladung**
-> Erhöht die Aufladungstufe um 1.
+ - **Donnerlawinen-Blitzsperrfeuer**
+<br> Feuert gleichzeitig mehrere Blitzangriffe ab. verringert jedoch die Reichweite.
 
-**Zangetsu: Großer Schlitzer**
-> Schaden wird erhöht, entfesselt ein Schlitzangriff mit hoher Reichweite.
+### <ins>Klein</ins>
+ - **Zekkuu mit Überladung**
+<br> Erhöht die Aufladungstufe um 1.
 
-### Agil
-**Sichellawine mit Schlitzer**
-> Feuert während der Kombo mehrere Fernkampfschlitzer ab.
+ - **Zangetsu: Großer Schlitzer**
+<br> Schaden wird erhöht, entfesselt ein Schlitzangriff mit hoher Reichweite.
 
-### Heathcliff
+### <ins>Agil</ins>
+ - **Sichellawine mit Schlitzer**
+<br> Feuert während der Kombo mehrere Fernkampfschlitzer ab.
 
-### Alice
-**Betäubender Ringelblumenschlitzer**
-> Schlitzschaden wird erhöht. Gewärt eine CHance, dass Treffer betäuben.
+### <ins>Heathcliff</ins>
 
-### Strea
+### <ins>Alice</ins>
+ - **Betäubender Ringelblumenschlitzer**
+<br> Schlitzschaden wird erhöht. Gewärt eine CHance, dass Treffer betäuben.
 
-### Argo
-**Notfallsprung mit Aufladung**
-> Lädt automatisch auf und greift an. Abklingzeit für eine erneute Nutzung ist länger, dafür ist der Schaden erhöht.
+### <ins>Strea</ins>
 
-**Giftiger Todesstoß**
-> Gewährt eine Chance, dass Treffer vergiften.
+### <ins>Argo</ins>
+ - **Notfallsprung mit Aufladung**
+<br> Lädt automatisch auf und greift an. Abklingzeit für eine erneute Nutzung ist länger, dafür ist der Schaden erhöht.
 
-### LLENN
-**Gleitschuss mit Druckwelle**
-> Trifft der Nachsetzer per Salto, werden umstehende Feinde von einer Druckwelle weggeschleudert.
+ - **Giftiger Todesstoß**
+<br> Gewährt eine Chance, dass Treffer vergiften.
 
-**Elementvariabler Bombentepich & Blitzschächenschaden+**
-> Wandelt Angriffe in Blitzangriffe um. Erhöht den Schaden von Blitzangriffen bei Feinden mit Blitzschwäche um 20%.
+### <ins>LLENN</ins>
+ - **Gleitschuss mit Druckwelle**
+<br> Trifft der Nachsetzer per Salto, werden umstehende Feinde von einer Druckwelle weggeschleudert.
 
-
-### Eiji
-**Frostiger Schneller Vorstoß**
-> Gewährt eine Chance, dass Treffer des Finishers einfrieren.
-
-**Elementarvariabler Phantomwirbel & Wasserschwächenschaden+**
-> Wandelt Angriffe in Wasserangriffe um. Erhöht den Schaden von Wasserangriffen bei Feinden mit Wasserschwäche um 20%.
+ - **Elementvariabler Bombentepich & Blitzschächenschaden+**
+<br> Wandelt Angriffe in Blitzangriffe um. Erhöht den Schaden von Blitzangriffen bei Feinden mit Blitzschwäche um 20%.
 
 
-### Yuuki
-**Teufels Elementvariebles Urteil & Lichschächenschaden+**
-> Wandelt Angriffe in Lichangriffe um. Erhöht den Schadenvon Lichtangriffen um 20%.
+### <ins>Eiji</ins>
+ - **Frostiger Schneller Vorstoß**
+<br> Gewährt eine Chance, dass Treffer des Finishers einfrieren.
 
-**Betäubender tödlicher Schlag**
-> Aufladen nicht mehr möglich. Treffer können aber das Ziel betäuben.
+ - **Elementarvariabler Phantomwirbel & Wasserschwächenschaden+**
+<br> Wandelt Angriffe in Wasserangriffe um. Erhöht den Schaden von Wasserangriffen bei Feinden mit Wasserschwäche um 20%.
 
-### Sinon
-**Elementarvariables Schwerkraftprojektil & Windschwächenschaden+**
-> Wandelt Angriffe in Windangriffe um. Erhöht den Schaden bei Feinden mit Windschwäche um 20%.
 
-**Triosalven-Sperrfeuer**
-> Erhöht die Anzahl verschossener Projektile, verringert aber die Reichweite.
+### <ins>Yuuki</ins>
+ - **Teufels Elementvariebles Urteil & Lichschächenschaden+**
+<br> Wandelt Angriffe in Lichangriffe um. Erhöht den Schadenvon Lichtangriffen um 20%.
 
-**Betäubende Tellermine**
-> Explosionsschaden wird erhöht. Gewährt eine CHance, das Explosionen betäuben.
+ - **Betäubender tödlicher Schlag**
+<br> Aufladen nicht mehr möglich. Treffer können aber das Ziel betäuben.
 
-### Fukaziroh
+### <ins>Sinon</ins>
+ - **Elementarvariables Schwerkraftprojektil & Windschwächenschaden+**
+<br> Wandelt Angriffe in Windangriffe um. Erhöht den Schaden bei Feinden mit Windschwäche um 20%.
 
-### Mortis
+ - **Triosalven-Sperrfeuer**
+<br> Erhöht die Anzahl verschossener Projektile, verringert aber die Reichweite.
 
-### Administrator
-**Herrschers Elementarvariebles Urteil & Blitzschwächenschaden+**
-> Wandelt Angriffe in Blitzangriffe um. Erhöht den Schaden von Blitzangriffen bei Feinden mit Blitzschwäche um 20%.
+ - **Betäubende Tellermine**
+<br> Explosionsschaden wird erhöht. Gewährt eine CHance, das Explosionen betäuben.
 
-### Eugeo
+### <ins>Fukaziroh</ins>
 
-### Oberon
-**Großes Excalibur mit ANG+**
-> Gewährt Gruppenmitgliedern im Angriffsbereich ANG+
+### <ins>Mortis</ins>
 
-### Leafa
-**Kämfende Klinge mit Aufladung**
-> Lädt automatisch auf und greift an. Erhöht den Schaden, du bist aber länger verwundbar.
+### <ins>Administrator</ins>
+ - **Herrschers Elementarvariebles Urteil & Blitzschwächenschaden+**
+<br> Wandelt Angriffe in Blitzangriffe um. Erhöht den Schaden von Blitzangriffen bei Feinden mit Blitzschwäche um 20%.
 
-### Silica
-**Illusionsklaue mit Aufladung**
-> Lädt automatscih auf und greift an. Abklingzeit für eine erneute Nutzung ist länger, adafür ist der Schaden erhöht.
+### <ins>Eugeo</ins>
 
-**Blenden & Blitz : Frost**
-> Gewährt eine Chance, dass Treffer des Blasenodems einfrieren.
+### <ins>Oberon</ins>
+ - **Großes Excalibur mit ANG+**
+<br> Gewährt Gruppenmitgliedern im Angriffsbereich ANG+
 
-### Yuna
-**Elementarevariable Energiewelle & Lichtschwächenschaden+**
-> Wandelt Angriffe in Lichtangriffe um. Erhöht den Schaden von Lichtangriffen bei Feinden mit Lichtschwäche um 20%.
+### <ins>Leafa</ins>
+ - **Kämfende Klinge mit Aufladung**
+<br> Lädt automatisch auf und greift an. Erhöht den Schaden, du bist aber länger verwundbar.
 
-**Energiewelle mit LP-Widerherstellung**
-> Verursacht weniger Schaden, heilt aber Gruppenmitglieder im Angriffsbereich.
+### <ins>Silica</ins>
+ - **Illusionsklaue mit Aufladung**
+<br> Lädt automatscih auf und greift an. Abklingzeit für eine erneute Nutzung ist länger, adafür ist der Schaden erhöht.
 
-### Yui
+ - **Blenden & Blitz : Frost**
+<br> Gewährt eine Chance, dass Treffer des Blasenodems einfrieren.
+
+### <ins>Yuna</ins>
+ - **Elementarevariable Energiewelle & Lichtschwächenschaden+**
+<br> Wandelt Angriffe in Lichtangriffe um. Erhöht den Schaden von Lichtangriffen bei Feinden mit Lichtschwäche um 20%.
+
+ - **Energiewelle mit LP-Widerherstellung**
+<br> Verursacht weniger Schaden, heilt aber Gruppenmitglieder im Angriffsbereich.
+
+### <ins>Yui</ins>
 
