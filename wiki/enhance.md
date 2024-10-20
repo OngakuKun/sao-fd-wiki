@@ -43,8 +43,8 @@
 ### Verstärken [+8]
  |                          |         |
  |--------------------------|---------|
-- Aufwertungsmaterial L        10
-- Col                      20.000
+ | Aufwertungsmaterial L    |      10 |
+ | Col                      |  20.000 |
 
 ### Verstärken [+9]
  |                          |         |
