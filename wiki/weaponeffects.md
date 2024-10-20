@@ -1,5 +1,3 @@
-# <ins>Legendäre Waffeneffekte</ins>
-
 ### <ins>Kirito</ins>
 
 - **Betäubendes Horizontalfeld**

@@ -1,5 +1,3 @@
-# Verstärkungskosten für Ausrüstung
-
 ### Verstärken [+1]
  |                          |         |
  |--------------------------|---------|
