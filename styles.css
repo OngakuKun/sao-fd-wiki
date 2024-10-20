@@ -10,14 +10,17 @@ body {
 /* Style the header */
 .header {
   position: fixed;
+  top: 0;
   width: 100%;
   background-color: #1564C6;
   padding: 10px;
+
   text-align: center;
   font-size: 18px;
 }
 .content {
   padding-top: 62px;
+  margin: 10px;
 }
 /* Create three unequal columns that floats next to each other */
 .column {
