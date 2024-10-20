@@ -40,7 +40,7 @@
 - Aufwertungsmaterial XL       10
 - Col                      40.000
 
-**Verstärken [+0] - [+10]
+**Verstärken [+0] - [+10]**
 - Aufwertungsmaterial XS       15
 - Aufwertungsmaterial  S       15
 - Aufwertungsmaterial  M       15
