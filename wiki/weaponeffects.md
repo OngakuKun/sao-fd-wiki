@@ -43,6 +43,8 @@
 <br> Schlitzschaden wird erhöht. Gewärt eine CHance, dass Treffer betäuben.
 
 ### <ins>Strea</ins>
+ - **Quell des Chaos + ANG+**
+<br> Gewährt innerhalb des markierten Bereichs ANG+ und LP-Absorption
 
 ### <ins>Argo</ins>
  - **Notfallsprung mit Aufladung**
