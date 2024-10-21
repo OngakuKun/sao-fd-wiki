@@ -6,8 +6,8 @@
 - **TödlicherSchlag mit Überladung**
 <br>Erhöht die Aufladungsstufe um 1
 
-- **Betäubendes Horizontalfeld**
-<br>Gewährt nach Treffer mit Kombo und Druckwelle eine Chance den Feind zu beträuben.
+- **Elementvariabler Albtraumregen & Dunkelschächeschaden+**
+<br>Wandelt Angriffe in Dunkelangriffe um. Erhöht den Schaden von Dunkelangriffen bei Feinden mit Dunkelschwäche um 20%.
 
 ### <ins>Asuna</ins>
  - **Delta-Frostangriff**
