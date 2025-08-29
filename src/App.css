@@ -30,7 +30,7 @@
 }
 
 .quest-card {
-  background: var(--ctp-macchiato-base);
+  background-color: var(--ctp-macchiato-base);
   border: 2px solid var(--ctp-macchiato-blue);
   border-radius: 10px;
   padding: 15px;
@@ -53,7 +53,10 @@
 .quest-type-header {
   background-color: var(--ctp-macchiato-base);
   border-bottom: 2px solid var(--ctp-macchiato-blue);
+  width: 80%;
   padding: 10px;
+  margin: auto;
+  margin-top: 10px;
 }
 
 footer {
