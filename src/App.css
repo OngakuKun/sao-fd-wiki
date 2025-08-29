@@ -8,7 +8,7 @@
 
 .App-header {
   background-color: var(--ctp-macchiato-base);
-  padding: 10px;
+  padding: 16px;
   min-height: auto;
   display: flex;
   flex-direction: row;
@@ -31,15 +31,15 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     width: 80%;
-    margin: 10px auto;
+    margin: 8px auto;
 }
 
 .quest-card {
   background-color: var(--ctp-macchiato-base);
   border: 2px solid var(--ctp-macchiato-blue);
-  border-radius: 10px;
-  padding: 15px;
-  margin: 10px auto;
+  border-radius: 8px;
+  padding: 16px;
+  margin: 8px auto;
   width: 80%;
   color: var(--ctp-macchiato-text);
   text-align: left;
@@ -47,21 +47,21 @@
 }
 
 .quest-card h3 {
-  margin: 0 0 10px 0;
+  margin: 0 0 8px 0;
   color: var(--ctp-macchiato-blue);
 }
 
 .quest-card p {
-  margin: 5px 0;
+  margin: 8px 0;
 }
 
 .quest-type-header {
   background-color: var(--ctp-macchiato-base);
   border-bottom: 2px solid var(--ctp-macchiato-blue);
   width: 80%;
-  padding: 10px;
+  padding: 8px;
   margin: auto;
-  margin-top: 10px;
+  margin-top: 8px;
 }
 
 footer {
@@ -69,6 +69,6 @@ footer {
   border-bottom: 2px solid var(--ctp-macchiato-blue);
   align-items: center;
   text-align: left;
-  padding: 10px;
+  padding: 8px;
 }
 
