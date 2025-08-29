@@ -41,8 +41,7 @@ function App() {
     return (
         <div className="App">
             <header className="App-header">
-                <img src="https://p325k7wa.twic.pics/high/sword-art-online/sao-fractured-daydream/00-page-setup/saofd-logo.png?twic=v1" className="App-logo" alt="logo" />
-                <h2>Sword Art Online: Fractured Daydream Wiki</h2>
+                Sword Art Online: Fractured Daydream Wiki
             </header>
             <main>
                 <ExtractQuests questType='Boss Raid' />
