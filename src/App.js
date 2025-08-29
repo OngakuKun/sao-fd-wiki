@@ -41,7 +41,9 @@ function App() {
     return (
         <div className="App">
             <header className="App-header">
-                Sword Art Online: Fractured Daydream Wiki
+                <div className="App-header-title">
+                    Sword Art Online: Fractured Daydream Wiki
+                </div>
             </header>
             <main>
                 <ExtractQuests questType='Boss Raid' />

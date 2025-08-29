@@ -10,17 +10,15 @@
   background-color: var(--ctp-macchiato-base);
   padding: 16px;
   min-height: auto;
+}
+
+.App-header-title {
+  text-shadow: 0 0 6px var(--ctp-macchiato-lavender);
+  font-size: calc(10px + 2vmin);
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: left;
-  font-size: calc(10px + 2vmin);
-  color: var(--ctp-macchiato-text);
-  text-shadow: 0 0 6px var(--ctp-macchiato-lavender);
-}
-
-.App-header h2 {
-  padding-left: 40px;
 }
 
 .App-link {
