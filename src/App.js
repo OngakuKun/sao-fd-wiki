@@ -43,8 +43,8 @@ function App() {
                 <h2>Sword Art Online: Fractured Daydream Wiki</h2>
             </header>
             <main>
-                <ExtractQuests questType='Coop Quest' />
                 <ExtractQuests questType='Boss Raid' />
+                <ExtractQuests questType='Coop Quest' />
             </main>
             <footer>
                 Made with GithubPages and React
