@@ -8,7 +8,6 @@
 
 .App-logo {
   height: 10vmin;
-  padding-right: 50px;
   pointer-events: none;
 }
 
@@ -24,7 +23,9 @@
   color: var(--ctp-macchiato-text);
   text-shadow: 0 0 6px var(--ctp-macchiato-lavender);
 }
-
+.App-header h2 {
+  padding-left: 40px;
+}
 .App-link {
   color: var(--ctp-macchiato-sapphire);
 }
