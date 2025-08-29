@@ -29,13 +29,20 @@
   color: var(--ctp-macchiato-sapphire);
 }
 
+.quest-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 80%;
+    margin: 10px auto;
+}
+
 .quest-card {
   background-color: var(--ctp-macchiato-base);
   border: 2px solid var(--ctp-macchiato-blue);
   border-radius: 10px;
   padding: 15px;
   margin: 10px auto;
-  width: 20%;
+  width: 80%;
   color: var(--ctp-macchiato-text);
   text-align: left;
   transition: transform 0.2s ease;

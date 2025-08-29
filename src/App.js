@@ -22,15 +22,17 @@ function ExtractQuests({questType}) {
     return (
         <div>
             <h2 className='quest-type-header'> --- {questType} --- </h2>
-            {quests
-                .filter((quest) => quest.type === questType)
-                .map((quest, index) => (
-                    <div key={index} className='quest-card'>
-                        <h3>{quest.name}</h3>
-                        <p>Weak: {quest.weak}</p>
-                        <p>Resistence: {quest.res} </p>
-                    </div>
-                ))}
+            <div className='quest-grid'>
+                {quests
+                    .filter((quest) => quest.type === questType)
+                    .map((quest, index) => (
+                        <div key={index} className='quest-card'>
+                            <h3>{quest.name}</h3>
+                            <p>Weak: {quest.weak}</p>
+                            <p>Resistence: {quest.res} </p>
+                        </div>
+                    ))}
+            </div>
         </div>
     )
 }
