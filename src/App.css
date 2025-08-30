@@ -1,54 +1,54 @@
 @import url('https://cdn.jsdelivr.net/npm/@catppuccin/palette/css/catppuccin.css');
 
 .App {
-  text-align: center;
-  background-color: var(--ctp-macchiato-crust);
-  color: var(--ctp-macchiato-text);
+    text-align: center;
+    background-color: var(--ctp-macchiato-crust);
+    color: var(--ctp-macchiato-text);
 }
 
 .App-header {
-  background-color: var(--ctp-macchiato-base);
-  padding: 16px;
-  min-height: auto;
-  display: flex;
-  flex-direction: row;
+    background-color: var(--ctp-macchiato-base);
+    padding: 16px;
+    min-height: auto;
+    display: flex;
+    flex-direction: row;
 }
 
 .App-header-title {
-  text-shadow: 0 0 6px var(--ctp-macchiato-lavender);
-  font-size: 24px;
-  display: flex;
-  flex-direction: row;
-  justify-content: start;
-  align-items: center;
-  margin: 8px auto;
-  margin-left: 16px;
+    text-shadow: 0 0 6px var(--ctp-macchiato-lavender);
+    font-size: 24px;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    margin: 8px auto;
+    margin-left: 16px;
 }
 .App-header-search {
-  display: flex;
-  flex-direction: row;
-  justify-content: end;
-  align-items: center;
-  margin: 8px auto;
-  margin-right: 16px;
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    align-items: center;
+    margin: 8px auto;
+    margin-right: 16px;
 }
 
 .App-header-search-kbd {
-  padding: 0px;
-  display: inline-grid;
-  border: 1px solid var(--ctp-macchiato-text);
-  border-radius: 4px;
-  font-size: 12px;
-  box-shadow: none;
-  width: 16px;
-  height: 16px;
-  vertical-align: baseline;
-  justify-content: center;
-  align-items: center;
+    padding: 0px;
+    display: inline-grid;
+    border: 1px solid var(--ctp-macchiato-text);
+    border-radius: 4px;
+    font-size: 12px;
+    box-shadow: none;
+    width: 16px;
+    height: 16px;
+    vertical-align: baseline;
+    justify-content: center;
+    align-items: center;
 }
 
 .App-link {
-  color: var(--ctp-macchiato-sapphire);
+    color: var(--ctp-macchiato-sapphire);
 }
 
 .quest-grid {
@@ -59,40 +59,40 @@
 }
 
 .quest-card {
-  background-color: var(--ctp-macchiato-base);
-  border: 2px solid var(--ctp-macchiato-blue);
-  border-radius: 8px;
-  padding: 16px;
-  margin: 8px auto;
-  width: 80%;
-  color: var(--ctp-macchiato-text);
-  text-align: left;
-  transition: transform 0.2s ease;
+    background-color: var(--ctp-macchiato-base);
+    border: 2px solid var(--ctp-macchiato-blue);
+    border-radius: 8px;
+    padding: 16px;
+    margin: 8px auto;
+    width: 80%;
+    color: var(--ctp-macchiato-text);
+    text-align: left;
+    transition: transform 0.2s ease;
 }
 
 .quest-card h3 {
-  margin: 0 0 8px 0;
-  color: var(--ctp-macchiato-blue);
+    margin: 0 0 8px 0;
+    color: var(--ctp-macchiato-blue);
 }
 
 .quest-card p {
-  margin: 8px 0;
+    margin: 8px 0;
 }
 
 .quest-type-header {
-  background-color: var(--ctp-macchiato-base);
-  border-bottom: 2px solid var(--ctp-macchiato-blue);
-  width: 80%;
-  padding: 8px;
-  margin: auto;
-  margin-top: 8px;
+    background-color: var(--ctp-macchiato-base);
+    border-bottom: 2px solid var(--ctp-macchiato-blue);
+    width: 80%;
+    padding: 8px;
+    margin: auto;
+    margin-top: 8px;
 }
 
 footer {
-  background-color: var(--ctp-macchiato-base);
-  border-bottom: 2px solid var(--ctp-macchiato-blue);
-  align-items: center;
-  text-align: left;
-  padding: 8px;
+    background-color: var(--ctp-macchiato-base);
+    border-bottom: 2px solid var(--ctp-macchiato-blue);
+    align-items: center;
+    text-align: left;
+    padding: 8px;
 }
 
