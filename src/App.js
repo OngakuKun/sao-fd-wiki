@@ -1,43 +1,53 @@
 import './App.css';
+import { useEffect, useState } from 'react';
 
-const quests = [
-    { type: 'Coop Quest', name: 'Woods of Recollection', weak: 'Electric', res: 'Wind' },
-    { type: 'Coop Quest', name: 'Abandoned Facility', weak: 'Water', res: 'Fire' },
-    { type: 'Coop Quest', name: 'Jade Maze', weak: 'Light', res: 'Dark' },
-    { type: 'Coop Quest', name: 'Ruins of Truth and Lies', weak: 'Wind', res: 'Electric' },
-    { type: 'Coop Quest', name: 'Woodland of Vitality', weak: 'Fire', res: 'Water' },
-    { type: 'Coop Quest', name: 'Amber Maze', weak: 'Dark', res: 'Light' },
-    { type: 'Coop Quest', name: 'Woods of Pluto', weak: 'Light', res: 'Dark' },
-    { type: 'Coop Quest', name: 'Toxic Ruins', weak: 'Wind', res: 'Electric' },
-    { type: 'Coop Quest', name: 'Poisoned Facility', weak: 'Fire', res: 'Water' },
-    { type: 'Boss Raid', name: 'Skull Reaper', weak: 'Light', res: 'Dark' },
-    { type: 'Boss Raid', name: 'SBC Trommel', weak: 'Electric', res: 'Wind' },
-    { type: 'Boss Raid', name: 'Kraken the Abyss Lord', weak: 'Fire', res: 'Water' },
-    { type: 'Boss Raid', name: 'Sword Golem', weak: 'Dark', res: 'Light' },
-    { type: 'Boss Raid', name: 'Dorz\'l the Chaos Drake', weak: 'Water', res: 'Fire' },
-    { type: 'Boss Raid', name: 'Fuscus the Vacant Colossus', weak: 'Wind', res: 'Electric' },
-]
+function getTranslation(obj, lang) {
+    if (obj[lang]) {
+        return obj[lang]
+    }
 
-function ExtractQuests({questType}) {
+    // Fallback to english
+    return "[EN] " + obj["en"]
+}
+
+function ExtractQuests({questTypeId, quests, elements, types, language}) {
+    const filteredQuests = quests.filter((quest) => quest.id === questTypeId);
+
     return (
         <div>
-            <h2 className='quest-type-header'> --- {questType} --- </h2>
-            <div className='quest-grid'>
-                {quests
-                    .filter((quest) => quest.type === questType)
-                    .map((quest, index) => (
-                        <div key={index} className='quest-card'>
-                            <h3>{quest.name}</h3>
-                            <p>Weak: {quest.weak}</p>
-                            <p>Resistence: {quest.res} </p>
-                        </div>
-                    ))}
+            <h2 className="quest-type-header">{types[questTypeId][language]}</h2>
+            <div className="quest-grid">
+                {filteredQuests.map((quest) => (
+                    <div key={quest.id + quest.name.en} className="quest-card">
+                        <h3>{getTranslation(quest.name, language)}</h3>
+                        <p>
+                            {types.weak[language]}{": "}
+                            {elements[quest.weak] || quest.weak}
+                        </p>
+                        <p>
+                            {types.res[language]}{": "}
+                            {elements[quest.res] || quest.res}
+                        </p>
+                    </div>
+                ))}
             </div>
         </div>
-    )
+    );
 }
 
 function App() {
+    const [data, setData] = useState(null);
+    const [language, setLanguage] = useState("en");
+
+    useEffect(() => {
+        fetch(process.env.PUBLIC_URL + '/Data.json')
+            .then((res) => res.json())
+            .then((json) => setData(json))
+            .catch((err) => console.error('Error loading data:', err));
+    }, []);
+
+    if (!data) return <div>Loading...</div>;
+
     return (
         <div className="App">
             <header className="App-header">
@@ -47,10 +57,28 @@ function App() {
                 <div className="App-header-search">
                     <span>Press <kbd className="App-header-search-kbd">/</kbd> to search</span>
                 </div>
+                {/* Language Switch */}
+                <div className="App-header-lang">
+                    <button onClick={() => setLanguage("en")}>English</button>
+                    <button onClick={() => setLanguage("de")}>Deutsch</button>
+                </div>
             </header>
             <main>
-                <ExtractQuests questType='Boss Raid' />
-                <ExtractQuests questType='Coop Quest' />
+                
+                <ExtractQuests
+                    questTypeId="boss"
+                    quests={data.quests}
+                    elements={data.elements[language]}
+                    types={data.types}
+                    language={language}
+                />
+                <ExtractQuests
+                    questTypeId="coop"
+                    quests={data.quests}
+                    elements={data.elements[language]}
+                    types={data.types}
+                    language={language}
+                />
             </main>
             <footer>
                 Made with GithubPages and React
