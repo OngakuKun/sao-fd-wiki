@@ -2,12 +2,14 @@ import './App.css';
 import { useEffect, useState } from 'react';
 
 function getTranslation(obj, lang) {
-    if (obj[lang]) {
-        return obj[lang]
-    }
+  if (!obj || typeof obj !== "object") return obj || "";
 
-    // Fallback to english
-    return "[EN] " + obj["en"]
+  if (obj[lang]) return obj[lang];
+
+  const otherLang = lang === "de" ? "en" : "de";
+  if (obj[otherLang]) return `[${otherLang.toUpperCase()}] ` + obj[otherLang];
+
+  return "";
 }
 
 function ExtractQuests({questTypeId, quests, elements, types, language}) {
@@ -64,7 +66,6 @@ function App() {
                 </div>
             </header>
             <main>
-                
                 <ExtractQuests
                     questTypeId="boss"
                     quests={data.quests}
