@@ -1,35 +1,38 @@
 import './App.css';
 import { useEffect, useState } from 'react';
 
+const LANG_EN = "en";
+const LANG_DE = "de";
+
 function getTranslation(obj, lang) {
   if (!obj || typeof obj !== "object") return obj || "";
 
   if (obj[lang]) return obj[lang];
 
-  const otherLang = lang === "de" ? "en" : "de";
+  const otherLang = lang === LANG_DE ? LANG_EN : LANG_DE;
   if (obj[otherLang]) return `[${otherLang.toUpperCase()}] ` + obj[otherLang];
 
   return "";
 }
 
-function ExtractQuests({questTypeId, quests, elements, types, language}) {
-    const filteredQuests = quests.filter((quest) => quest.id === questTypeId);
+function getElementLabel(key, elements) {
+    return elements[key] || `[MISSING] ${key}`
+}
+
+function ExtractQuests({questTypeId, questList, elementList, typeList, language}) {
+    const filteredQuests = questList.filter((quest) => quest.id === questTypeId);
 
     return (
         <div>
-            <h2 className="quest-type-header">{types[questTypeId][language]}</h2>
+            <h2 className="quest-type-header">
+                {typeList[questTypeId]?.[language] || getTranslation(typeList[questTypeId], language)}
+            </h2>
             <div className="quest-grid">
                 {filteredQuests.map((quest) => (
                     <div key={quest.id + quest.name.en} className="quest-card">
                         <h3>{getTranslation(quest.name, language)}</h3>
-                        <p>
-                            {types.weak[language]}{": "}
-                            {elements[quest.weak] || quest.weak}
-                        </p>
-                        <p>
-                            {types.res[language]}{": "}
-                            {elements[quest.res] || quest.res}
-                        </p>
+                        <p> {typeList.weak[language] + ": " + getElementLabel(quest.weak, elementList)} </p>
+                        <p> {typeList.res[language] + ": " + getElementLabel(quest.res, elementList)} </p>
                     </div>
                 ))}
             </div>
@@ -39,7 +42,7 @@ function ExtractQuests({questTypeId, quests, elements, types, language}) {
 
 function App() {
     const [data, setData] = useState(null);
-    const [language, setLanguage] = useState("en");
+    const [language, setLanguage] = useState(LANG_EN);
 
     useEffect(() => {
         fetch(process.env.PUBLIC_URL + '/Data.json')
@@ -61,23 +64,23 @@ function App() {
                 </div>
                 {/* Language Switch */}
                 <div className="App-header-lang">
-                    <button onClick={() => setLanguage("en")}>English</button>
-                    <button onClick={() => setLanguage("de")}>Deutsch</button>
+                    <button onClick={() => setLanguage(LANG_EN)}>English</button>
+                    <button onClick={() => setLanguage(LANG_DE)}>Deutsch</button>
                 </div>
             </header>
             <main>
                 <ExtractQuests
                     questTypeId="boss"
-                    quests={data.quests}
-                    elements={data.elements[language]}
-                    types={data.types}
+                    questList={data.quests}
+                    elementList={data.elements[language]}
+                    typeList={data.types}
                     language={language}
                 />
                 <ExtractQuests
                     questTypeId="coop"
-                    quests={data.quests}
-                    elements={data.elements[language]}
-                    types={data.types}
+                    questList={data.quests}
+                    elementList={data.elements[language]}
+                    typeList={data.types}
                     language={language}
                 />
             </main>
