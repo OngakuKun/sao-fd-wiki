@@ -95,7 +95,13 @@
         "weak": { "en": "Weakness", "de": "Schwäche" },
         "res": { "en": "Resistence", "de": "Resistenz" },
         "coop": { "en": "Co-Op Quest", "de": "Koop-Quest" },
-        "boss": { "en": "Boss Raid", "de": "Boss-Raid" }
+        "boss": { "en": "Boss Raid", "de": "Boss-Raid" },
+        "fighter": { "en": "Fighter", "de": "Kämpfer" },
+        "tank": { "en": "Tank", "de": "Tank" },
+        "rogue": { "en": "Rogue", "de": "Schurke" },
+        "ranger": { "en": "Ranger", "de": "Ranger" },
+        "mage": { "en": "Mage", "de": "Magier" },
+        "supporter": { "en": "Support", "de": "Supporter" }
     },
     "elements": {
         "en": {
