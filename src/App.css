@@ -10,15 +10,41 @@
   background-color: var(--ctp-macchiato-base);
   padding: 16px;
   min-height: auto;
+  display: flex;
+  flex-direction: row;
 }
 
 .App-header-title {
   text-shadow: 0 0 6px var(--ctp-macchiato-lavender);
-  font-size: calc(10px + 2vmin);
+  font-size: 24px;
   display: flex;
   flex-direction: row;
+  justify-content: start;
   align-items: center;
-  justify-content: left;
+  margin: 8px auto;
+  margin-left: 16px;
+}
+.App-header-search {
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  align-items: center;
+  margin: 8px auto;
+  margin-right: 16px;
+}
+
+.App-header-search-kbd {
+  padding: 0px;
+  display: inline-grid;
+  border: 1px solid var(--ctp-macchiato-text);
+  border-radius: 4px;
+  font-size: 12px;
+  box-shadow: none;
+  width: 16px;
+  height: 16px;
+  vertical-align: baseline;
+  justify-content: center;
+  align-items: center;
 }
 
 .App-link {

@@ -44,6 +44,9 @@ function App() {
                 <div className="App-header-title">
                     Sword Art Online: Fractured Daydream Wiki
                 </div>
+                <div className="App-header-search">
+                    <span>Press <kbd className="App-header-search-kbd">/</kbd> to search</span>
+                </div>
             </header>
             <main>
                 <ExtractQuests questType='Boss Raid' />
