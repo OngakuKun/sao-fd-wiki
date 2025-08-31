@@ -12,49 +12,49 @@ const LANG_EN = "en";
 const LANG_DE = "de";
 
 function LanguageSwitcher({ language, setLanguage }) {
-  const [open, setOpen] = useState(false);
+    const [open, setOpen] = useState(false);
 
-  const languages = [
-    { code: "en", label: "English", flag: "🇬🇧" },
-    { code: "de", label: "Deutsch", flag: "🇩🇪" },
-  ];
+    const languages = [
+        { code: "en", label: "English", flag: "🇬🇧" },
+        { code: "de", label: "Deutsch", flag: "🇩🇪" },
+    ];
 
-  const current = languages.find(l => l.code === language);
+    const current = languages.find(l => l.code === language);
 
-  return (
-    <div className="lang-switcher">
-      <button onClick={() => setOpen(!open)} className="lang-btn">
-        <span className="flag">{current.flag}</span> {current.label} ▾
-      </button>
-      {open && (
-        <ul className="lang-dropdown">
-          {languages.map(l => (
-            <li key={l.code}>
-              <button
-                onClick={() => {
-                  setLanguage(l.code);
-                  setOpen(false);
-                }}
-              >
-                <span className="flag">{l.flag}</span> {l.label}
-              </button>
-            </li>
-          ))}
-        </ul>
-      )}
-    </div>
-  );
+    return (
+        <div className="lang-switcher">
+            <button onClick={() => setOpen(!open)} className="lang-btn">
+                <span className="flag">{current.flag}</span> {current.label} ▾
+            </button>
+            {open && (
+                <ul className="lang-dropdown">
+                    {languages.map(l => (
+                        <li key={l.code}>
+                            <button
+                                onClick={() => {
+                                    setLanguage(l.code);
+                                    setOpen(false);
+                                }}
+                            >
+                                <span className="flag">{l.flag}</span> {l.label}
+                            </button>
+                        </li>
+                    ))}
+                </ul>
+            )}
+        </div>
+    );
 }
 
 function getTranslation(obj, lang) {
-  if (!obj || typeof obj !== "object") return obj || "";
+    if (!obj || typeof obj !== "object") return obj || "";
 
-  if (obj[lang]) return obj[lang];
+    if (obj[lang]) return obj[lang];
 
-  const otherLang = lang === LANG_DE ? LANG_EN : LANG_DE;
-  if (obj[otherLang]) return `[${otherLang.toUpperCase()}] ` + obj[otherLang];
+    const otherLang = lang === LANG_DE ? LANG_EN : LANG_DE;
+    if (obj[otherLang]) return `[${otherLang.toUpperCase()}] ` + obj[otherLang];
 
-  return "";
+    return "";
 }
 
 function getElementLabel(key, elements) {
@@ -78,6 +78,22 @@ function ExtractQuests({title, questList, typeList, language}) {
     );
 }
 
+function ExtractSpecialEffects({ title, effectList = [], language }) {
+    return (
+        <div>
+            <h2 className="effect-type-header">{title}</h2>
+            <div className="effect-grid">
+                {effectList.map((effect, index) => (
+                    <div key={index} className="effect-card">
+                        <h3>{effect.nameText}</h3>
+                        <p>{effect.descText}</p>
+                    </div>
+                ))}
+            </div>
+        </div>
+    );
+}
+
 function App() {
     const [data, setData] = useState(null);
     const [language, setLanguage] = useState(LANG_EN);
@@ -90,9 +106,10 @@ function App() {
             .then((json) => setData(json))
             .catch((err) => console.error('Error loading data:', err));
     }, []);
-    
+
     let bossQuests = []
     let coopQuests = []
+    let specialEffects = []
 
     if (data) {
         bossQuests = data.quests
@@ -103,6 +120,7 @@ function App() {
                 weakText: getElementLabel(q.weak, data.elements[language]),
                 resText:  getElementLabel(q.res, data.elements[language])
             }));
+
         coopQuests = data.quests
             .filter(q => q.id === "coop")
             .map(q => ({
@@ -111,6 +129,15 @@ function App() {
                 weakText: getElementLabel(q.weak, data.elements[language]),
                 resText:  getElementLabel(q.res, data.elements[language])
             }));
+
+        specialEffects = data.specialeffects.pieces.map(piece => ({
+            type: piece.type,
+            entries: piece.entries.map(effect => ({
+                ...effect,
+                nameText: getTranslation(effect.name, language),
+                descText: getTranslation(effect.desc, language),
+            }))
+        }));
     }
 
     return (
@@ -130,18 +157,27 @@ function App() {
             <main>
                 {data ? (
                     <>
-                <ExtractQuests
-                    title={getTranslation(data.types.boss, language)}
-                    questList={bossQuests}
-                    typeList={data.types}
-                    language={language}
-                    />
-                <ExtractQuests
-                    title={getTranslation(data.types.coop, language)}
-                    questList={coopQuests}
-                    typeList={data.types}
-                    language={language}
-                    />
+                        <ExtractQuests
+                            title={getTranslation(data.types.coop, language)}
+                            questList={coopQuests}
+                            typeList={data.types}
+                            language={language}
+                        />
+                        <ExtractQuests
+                            title={getTranslation(data.types.boss, language)}
+                            questList={bossQuests}
+                            typeList={data.types}
+                            language={language}
+                        />
+                        {specialEffects.map((piece, i) => (
+                            <ExtractSpecialEffects
+                                key={piece.type + i}
+                                title={`SpecialEffects - ${piece.type}`}
+                                effectList={piece.entries}
+                                language={language}
+                            />
+                        ))}
+
                     </>
                 ) : (
                         <div>Loading...</div>
