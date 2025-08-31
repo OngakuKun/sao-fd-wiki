@@ -54,9 +54,10 @@
 
 .quest-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    width: 80%;
-    margin: 8px auto;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    gap: 16px;
+    max-width:calc(3 * 416px);
+    margin: 16px auto;
 }
 
 .quest-card {
@@ -64,8 +65,6 @@
     border: 2px solid var(--ctp-macchiato-blue);
     border-radius: 8px;
     padding: 16px;
-    margin: 8px auto;
-    width: 80%;
     color: var(--ctp-macchiato-text);
     text-align: left;
     transition: transform 0.2s ease;
@@ -83,10 +82,10 @@
 .quest-type-header {
     background-color: var(--ctp-macchiato-base);
     border-bottom: 2px solid var(--ctp-macchiato-blue);
-    width: 80%;
+    max-width:calc(3 * 416px);
     padding: 8px;
-    margin: auto;
-    margin-top: 8px;
+    margin: 8px auto;
+    margin-top: 16px;
 }
 
 footer {
