@@ -1,6 +1,13 @@
 import './App.css';
 import { useEffect, useState } from 'react';
 
+function getDataURL() {
+    if (process.env.NODE_ENV === "development") {
+        return process.env.PUBLIC_URL + "/data.json";
+    }
+    return "https://raw.githubusercontent.com/OngakuKun/sao-fd-wiki/dev/Data.json";
+}
+
 const LANG_EN = "en";
 const LANG_DE = "de";
 
@@ -76,7 +83,9 @@ function App() {
     const [language, setLanguage] = useState(LANG_EN);
 
     useEffect(() => {
-        fetch(process.env.PUBLIC_URL + '/Data.json')
+        const url = getDataURL();
+        console.log("Fetching:", url);
+        fetch(url)
             .then((res) => res.json())
             .then((json) => setData(json))
             .catch((err) => console.error('Error loading data:', err));
