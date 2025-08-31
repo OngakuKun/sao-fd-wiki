@@ -86,7 +86,7 @@
         },
         {
             "id": "boss",
-            "name": { "en": "Fuscus the Vacant Colossus" },
+            "name": { "en": "Fuscus the Vacant Colossus", "de": "Fuscus der Leere Koloss" },
             "weak": "wind",
             "res":  "electric"
         }
