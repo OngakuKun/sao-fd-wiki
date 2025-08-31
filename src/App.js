@@ -5,7 +5,7 @@ function getDataURL() {
     if (process.env.NODE_ENV === "development") {
         return process.env.PUBLIC_URL + "/data.json";
     }
-    return "https://raw.githubusercontent.com/OngakuKun/sao-fd-wiki/dev/public/Data.json";
+    return "https://raw.githubusercontent.com/OngakuKun/sao-fd-wiki/refs/heads/dev/public/data.json";
 }
 
 const LANG_EN = "en";
