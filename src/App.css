@@ -156,6 +156,41 @@ main {
     margin: 0px auto;
 }
 
+.effect-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
+    gap: 16px;
+    max-width:1300px;
+    margin: 16px auto;
+}
+
+.effect-card {
+    background-color: var(--ctp-macchiato-base);
+    border: 2px solid var(--ctp-macchiato-blue);
+    border-radius: 8px;
+    padding: 16px;
+    color: var(--ctp-macchiato-text);
+    text-align: left;
+    transition: transform 0.2s ease;
+}
+
+.effect-card h3 {
+    margin: 0 0 8px 0;
+    color: var(--ctp-macchiato-blue);
+}
+
+.effect-card p {
+    margin: 8px 0;
+}
+
+.effect-type-header {
+    background-color: var(--ctp-macchiato-base);
+    border-bottom: 2px solid var(--ctp-macchiato-blue);
+    max-width:1300px;
+    padding: 8px;
+    margin: 0px auto;
+}
+
 footer {
     background-color: var(--ctp-macchiato-base);
     box-shadow: 0 0 6px var(--ctp-macchiato-text);
