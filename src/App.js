@@ -172,7 +172,7 @@ function App() {
                         {specialEffects.map((piece, i) => (
                             <ExtractSpecialEffects
                                 key={piece.type + i}
-                                title={`SpecialEffects - ${piece.type}`}
+                                title={"SpecialEffects - " + getTranslation(data.types[piece.type], language)}
                                 effectList={piece.entries}
                                 language={language}
                             />
