@@ -19,20 +19,16 @@ function getElementLabel(key, elements) {
     return elements[key] || `[MISSING] ${key}`
 }
 
-function ExtractQuests({questTypeId, questList, elementList, typeList, language}) {
-    const filteredQuests = questList.filter((quest) => quest.id === questTypeId);
-
+function ExtractQuests({title, questList, typeList, language}) {
     return (
         <div>
-            <h2 className="quest-type-header">
-                {typeList[questTypeId]?.[language] || getTranslation(typeList[questTypeId], language)}
-            </h2>
+            <h2 className="quest-type-header"> {title} </h2>
             <div className="quest-grid">
-                {filteredQuests.map((quest) => (
-                    <div key={quest.id + quest.name.en} className="quest-card">
-                        <h3>{getTranslation(quest.name, language)}</h3>
-                        <p> {typeList.weak[language] + ": " + getElementLabel(quest.weak, elementList)} </p>
-                        <p> {typeList.res[language] + ": " + getElementLabel(quest.res, elementList)} </p>
+                {questList.map((quest, index) => (
+                    <div key={quest.id + index} className="quest-card">
+                        <h3>{quest.nameText}</h3>
+                        <p> {typeList.weak[language] + ": " + quest.weakText} </p>
+                        <p> {typeList.res[language] + ": " + quest.resText} </p>
                     </div>
                 ))}
             </div>
@@ -50,8 +46,28 @@ function App() {
             .then((json) => setData(json))
             .catch((err) => console.error('Error loading data:', err));
     }, []);
+    
+    let bossQuests = []
+    let coopQuests = []
 
-    if (!data) return <div>Loading...</div>;
+    if (data) {
+        bossQuests = data.quests
+            .filter(q => q.id === "boss")
+            .map(q => ({
+                ...q,
+                nameText: getTranslation(q.name, language),
+                weakText: getElementLabel(q.weak, data.elements[language]),
+                resText:  getElementLabel(q.res, data.elements[language])
+            }));
+        coopQuests = data.quests
+            .filter(q => q.id === "coop")
+            .map(q => ({
+                ...q,
+                nameText: getTranslation(q.name, language),
+                weakText: getElementLabel(q.weak, data.elements[language]),
+                resText:  getElementLabel(q.res, data.elements[language])
+            }));
+    }
 
     return (
         <div className="App">
@@ -69,20 +85,24 @@ function App() {
                 </div>
             </header>
             <main>
+                {data ? (
+                    <>
                 <ExtractQuests
-                    questTypeId="boss"
-                    questList={data.quests}
-                    elementList={data.elements[language]}
+                    title={getTranslation(data.types.boss, language)}
+                    questList={bossQuests}
                     typeList={data.types}
                     language={language}
-                />
+                    />
                 <ExtractQuests
-                    questTypeId="coop"
-                    questList={data.quests}
-                    elementList={data.elements[language]}
+                    title={getTranslation(data.types.coop, language)}
+                    questList={coopQuests}
                     typeList={data.types}
                     language={language}
-                />
+                    />
+                    </>
+                ) : (
+                        <div>Loading...</div>
+                    )}
             </main>
             <footer>
                 Made with GithubPages and React
