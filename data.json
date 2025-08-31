@@ -91,6 +91,109 @@
             "res":  "electric"
         }
     ],
+    "specialeffects": {
+        "pieces": [
+            {
+                "type": "Ring",
+                "entries": [
+                    {
+                        "name": { "de": "Unverwundbarkeit+ bei Sprint" },
+                        "desc": { "de": "Verlängert die Unverwundbarkeit beim Sprinten." }
+                    },
+                    {
+                        "name": { "de": "Angriff durch Sprint" },
+                        "desc": { "de": "Fügt beim Sprinten umstehenden Feinden Schaden zu." }
+                    },
+                    {
+                        "name": { "de": "Krit. Treffer durch Perfektes Ausweichen" },
+                        "desc": { "de": "Nach Perfekten Ausweichen landen alle Angriffe einige Zeit lang kritische Treffer." }
+                    },
+                    {
+                        "name": { "de": "Kürzeres Cool-down durch Perfektes Blocken" },
+                        "desc": { "de": "Perfektes Blocken beschleunigt die Abklingzeit aller Erweiterten Skills um 20%." }
+                    },
+                    {
+                        "name": { "de": "Flugtempo+" },
+                        "desc": { "de": "Erhöht das Flugtempo um 50%." }
+                    },
+                    {
+                        "name": { "de": "Kombo-Startfenster+" },
+                        "desc": { "de": "Verlängert das Startfenster der Kombo um 50%." }
+                    }
+                ]
+            },
+            {
+                "type": "Armband",
+                "entries": [
+                    {
+                        "name": { "de": "Regeneration+ mit Heilkristallen" },
+                        "desc": { "de": "Erhöht die Regeneration mit Heilkristallen um 50%." }
+                    },
+                    {
+                        "name": { "de": "Kürzeres Cool-down durch Schwachpunktangriffe" },
+                        "desc": { "de": "Beschleunigt das Cool-down eines zufällig ausgewählten Erweiterten Skills, wenn du einen Schwachpunkt angreifst." }
+                    },
+                    {
+                        "name": { "de": "Kürzeres Cool-down bei Max. LP" },
+                        "desc": { "de": "Beschleunigt das Cool-down aller Erweiterten Skills um 20%, wenn du bei Max. LP bist." }
+                    },
+                    {
+                        "name": { "de": "Regeneration+ für Fluganzeige" },
+                        "desc": { "de": "Beschleunigt die Erholung der Fluganzeige um 50%." }
+                    },
+                    {
+                        "name": { "de": "Nahkampfschaden absorbieren" },
+                        "desc": { "de": "Regeneriert 0,5% des Schadens durch Nahkampfangriffe als LP." }
+                    },
+                    {
+                        "name": { "de": "Kürzeres Cool-down bei Block" },
+                        "desc": { "de": "Beschleunigt das Cool-down eines zufällig ausgewählten Erweiterten Skills um 20%, wenn du einen Angriff blockst." }
+                    },
+                    {
+                        "name": { "de": "Kein Cool-down der Fertigkeit bei Kombo" },
+                        "desc": { "de": "Treffer mit einer 100er Kombo setzen die Abklingzeit eines zufällig ausgewählten Erweiterten Skills zurück." }
+                    },
+                    {
+                        "name": { "de": "Chance auf Heilungsbeute von Feinden" },
+                        "desc": { "de": "Besiegte Feinde hinterlassen mit einer Chance von 10% Heilgegenstände." }
+                    },
+                    {
+                        "name": { "de": "Anzeige+ für Einzigartige Skills" },
+                        "desc": { "de": "Die Anzeige für Einzigartige Skills wächst schneller." }
+                    }
+                ]
+            },
+            {
+                "type": "Halskette",
+                "entries": [
+                    {
+                        "name": { "de": "Kürzeres Cool-down bei fallenden LP" },
+                        "desc": { "de": "Beschleunigt das Cool-down Erweiterter Skills basierend auf den verbleibenden LP. Je weniger LP du hast, desto schneller vergeht die Abklingzeit." }
+                    },
+                    {
+                        "name": { "de": "Blockschadenreduktion & Max. LP -50%" },
+                        "desc": { "de": "Erhöht die Schadensreduktion beim Blocken auf 100% und reduziert gleichzeitig Max. LP um 50%." }
+                    },
+                    {
+                        "name": { "de": "Schaden+ für Erw. Skills gegen 5% LP" },
+                        "desc": { "de": "Verbrauche 5% deiner Max. LP beim Einsatz offensiver Erweiterter Skills, um den Schaden um 30% zu erhöhen." }
+                    },
+                    {
+                        "name": { "de": "-25% Max. LP & Ultimate-Abklingzeit+ nach Perf. Block 15%" },
+                        "desc": { "de": "Beschleunigt die Abklingzeit von Ultimates um 15% bei Perfektem Blocken. Reduziert Max. LP um 25%." }
+                    },
+                    {
+                        "name": { "de": "ANG+ & Max. LP -25%" },
+                        "desc": { "de": "Erhöht ANG um 20%, reduziert aber Max. LP um 25%." }
+                    },
+                    {
+                        "name": { "de": "Kirtische Rate+ bei fallenden LP" },
+                        "desc": { "de": "Erhöht die Kritische Trefferrate bei fallenden LP. Je niedriger deine LP, desto höher deine Kritische Trefferrate." }
+                    }
+                ]
+            }
+        ]
+    },
     "types": {
         "weak": { "en": "Weakness", "de": "Schwäche" },
         "res": { "en": "Resistence", "de": "Resistenz" },
