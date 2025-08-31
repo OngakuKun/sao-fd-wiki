@@ -197,6 +197,7 @@
     "types": {
         "weak": { "en": "Weakness", "de": "Schwäche" },
         "res": { "en": "Resistence", "de": "Resistenz" },
+        "specialeffects": { "en": "Special Effect", "de": "Special Effekt" },
         "ring": { "en": "Ring", "de": "Ring" },
         "bracelet": { "en": "Bracelet", "de": "Armband" },
         "necklace": { "en": "Necklace", "de": "Halskette" },
