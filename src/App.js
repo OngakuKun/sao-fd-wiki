@@ -4,6 +4,41 @@ import { useEffect, useState } from 'react';
 const LANG_EN = "en";
 const LANG_DE = "de";
 
+function LanguageSwitcher({ language, setLanguage }) {
+  const [open, setOpen] = useState(false);
+
+  const languages = [
+    { code: "en", label: "English", flag: "🇬🇧" },
+    { code: "de", label: "Deutsch", flag: "🇩🇪" },
+  ];
+
+  const current = languages.find(l => l.code === language);
+
+  return (
+    <div className="lang-switcher">
+      <button onClick={() => setOpen(!open)} className="lang-btn">
+        <span className="flag">{current.flag}</span> {current.label} ▾
+      </button>
+      {open && (
+        <ul className="lang-dropdown">
+          {languages.map(l => (
+            <li key={l.code}>
+              <button
+                onClick={() => {
+                  setLanguage(l.code);
+                  setOpen(false);
+                }}
+              >
+                <span className="flag">{l.flag}</span> {l.label}
+              </button>
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
+  );
+}
+
 function getTranslation(obj, lang) {
   if (!obj || typeof obj !== "object") return obj || "";
 
@@ -80,8 +115,7 @@ function App() {
                 </div>
                 {/* Language Switch */}
                 <div className="App-header-lang">
-                    <button onClick={() => setLanguage(LANG_EN)}>English</button>
-                    <button onClick={() => setLanguage(LANG_DE)}>Deutsch</button>
+                    <LanguageSwitcher language={language} setLanguage={setLanguage} />
                 </div>
             </header>
             <main>

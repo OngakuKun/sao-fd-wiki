@@ -4,6 +4,7 @@
     text-align: center;
     background-color: var(--ctp-macchiato-crust);
     color: var(--ctp-macchiato-text);
+    font-size: 16px;
 }
 
 .App-header {
@@ -12,6 +13,7 @@
     min-height: auto;
     display: flex;
     flex-direction: row;
+    align-items: center;
 }
 
 .App-header-title {
@@ -44,8 +46,57 @@
     width: 16px;
     height: 16px;
     vertical-align: baseline;
-    justify-content: center;
-    align-items: center;
+}
+
+.lang-switcher {
+    position: relative;
+    display: inline-block;
+}
+
+.lang-btn {
+    display: inline-flex;
+    background-color: var(--ctp-macchiato-crust);
+    color: var(--ctp-macchiato-text);
+    border: 2px solid var(--ctp-macchiato-blue);
+    border-radius: 8px;
+    min-width: 100%;
+    padding: 8px;
+    cursor: pointer;
+}
+
+.lang-btn .flag {
+    margin-right: 2px;
+}
+
+.lang-dropdown {
+    background-color: var(--ctp-macchiato-base);
+    color: var(--ctp-macchiato-text);
+    position: absolute;
+    min-width: 100%;
+    top: 100%;
+    right: 0;
+    left: auto;
+    border-radius: 8px;
+    border: 2px solid var(--ctp-macchiato-blue);
+    list-style: none;
+    padding: 8px;
+    margin: 0;
+    margin-top: 8px;
+    z-index: 1000;
+}
+
+.lang-dropdown li button {
+    background-color: var(--ctp-macchiato-base);
+    color: var(--ctp-macchiato-text);
+    border: none;
+    text-align: left;
+    padding: 8px;
+    width: 100%;
+    cursor: pointer;
+}
+
+.lang-dropdown li button:hover {
+    background-color: var(--ctp-macchiato-crust);
 }
 
 .App-link {
