@@ -94,7 +94,7 @@
     "specialeffects": {
         "pieces": [
             {
-                "type": "Ring",
+                "type": "ring",
                 "entries": [
                     {
                         "name": { "de": "Unverwundbarkeit+ bei Sprint" },
@@ -123,7 +123,7 @@
                 ]
             },
             {
-                "type": "Armband",
+                "type": "bracelet",
                 "entries": [
                     {
                         "name": { "de": "Regeneration+ mit Heilkristallen" },
@@ -164,7 +164,7 @@
                 ]
             },
             {
-                "type": "Halskette",
+                "type": "necklace",
                 "entries": [
                     {
                         "name": { "de": "Kürzeres Cool-down bei fallenden LP" },
@@ -197,6 +197,9 @@
     "types": {
         "weak": { "en": "Weakness", "de": "Schwäche" },
         "res": { "en": "Resistence", "de": "Resistenz" },
+        "ring": { "en": "Ring", "de": "Ring" },
+        "bracelet": { "en": "Bracelet", "de": "Armband" },
+        "necklace": { "en": "Necklace", "de": "Halskette" },
         "coop": { "en": "Co-Op Quest", "de": "Koop-Quest" },
         "boss": { "en": "Boss Raid", "de": "Boss-Raid" },
         "fighter": { "en": "Fighter", "de": "Kämpfer" },
