@@ -17,6 +17,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v1
 
+      - name: Remove local-only symlink
+        run: rm -f /public/data.json || true
+
       - name: Install and build
         run: npm install && npm run build
       
