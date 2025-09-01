@@ -49,6 +49,8 @@ function LanguageSwitcher({ language, setLanguage }) {
 function getTranslation(obj, lang) {
     if (!obj || typeof obj !== "object") return obj || "";
 
+    if ("i" in obj) return obj.i;
+
     if (obj[lang]) return obj[lang];
 
     const otherLang = lang === LANG_DE ? LANG_EN : LANG_DE;
@@ -177,7 +179,6 @@ function App() {
                                 language={language}
                             />
                         ))}
-
                     </>
                 ) : (
                         <div>Loading...</div>
