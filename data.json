@@ -94,6 +94,348 @@
     "specialeffects": {
         "pieces": [
             {
+                "type": "kirito",
+                "entries": [
+                    {
+                        "name": { "de": "Betäubendes Horizontalfeld" },
+                        "desc": { "de": "Gewährt nach Treffer mit Kombo und Druckwelle eine Chance, den Feind zu betäuben." }
+                    },
+                    {
+                        "name": { "de": "TödlicherSchlag mit Überladung" },
+                        "desc": { "de": "Erhöht die Aufladungsstufe um 1" }
+                    },
+                    {
+                        "name": { "de": "Elementvariabler Albtraumregen & Dunkelschächeschaden+" },
+                        "desc": { "de": "Wandelt Angriffe in Dunkelangriffe um. Erhöht den Schaden von Dunkelangriffen bei Feinden mit Dunkelschwäche um 20%." }
+                    },
+                    {
+                        "name": { "de": "Albtraumregen mit Aufladung" },
+                        "desc": { "de": "Lädt automatisch auf und greift an. Abklingzeit für eine erneute Nutzung ist länger, dafür ist der Schaden erhöht." }
+                    }
+                ]
+            },
+            {
+                "type": "asuna",
+                "entries": [
+                    {
+                        "name": { "de": "Delta-Frostangriff" },
+                        "desc": { "de": "Gewärt nach Treffer mit Kombo und Druckwelle eine Chance, den Feind einzufrieren." }
+                    },
+                    {
+                        "name": { "de": "Kombo+ für Strahlender Stoß" },
+                        "desc": { "de": "Reduziert den Schaden, aber die Stoßkombo trifft öfter." }
+                    },
+                    {
+                        "name": { "de": "Sternenspritzer mit Aufladung" },
+                        "desc": { "de": "Lädt automatisch auf und greift an. Erhöht den Schaden, du bist aber länger verwundbar." }
+                    }
+                ]
+            },
+            {
+                "type": "lisbeth",
+                "entries": [
+                    {
+                        "name": { "de": "Herzschlagbrecher mit Aufladung" },
+                        "desc": { "de": "Lädt automatisch auf und greift an. Erhöht den Sachden, du bist aber länger verwundbar." }
+                    },
+                    {
+                        "name": { "de": "Donnerlawinen-Blitzsperrfeuer" },
+                        "desc": { "de": "Feuert gleichzeitig mehrere Blitzangriffe ab. verringert jedoch die Reichweite." }
+                    },
+                    {
+                        "name": { "de": "Variabler Buff für Götterschmiede" },
+                        "desc": { "de": "Aus ANG+ wird Schadensreduktion." }
+                    }
+                ]
+            },
+            {
+                "type": "klein",
+                "entries": [
+                    {
+                        "name": { "de": "Zekkuu mit Überladung" },
+                        "desc": { "de": "Erhöht die Aufladungstufe um 1." }
+                    },
+                    {
+                        "name": { "de": "Zangetsu: Großer Schlitzer" },
+                        "desc": { "de": "Schaden wird erhöht, entfesselt ein Schlitzangriff mit hoher Reichweite." }
+                    },
+                    {
+                        "name": { "de": "Giftiger Gengetsu" },
+                        "desc": { "de": "Treffer für Schockwelle vergiftet, anstatt zu betäuben." }
+                    }
+                ]
+            },
+            {
+                "type": "agil",
+                "entries": [
+                    {
+                        "name": { "de": "Sichellawine mit Schlitzer" },
+                        "desc": { "de": "Feuert während der Kombo mehrere Fernkampfschlitzer ab." }
+                    },
+                    {
+                        "name": { "de": "Variabler Wirbelwind" },
+                        "desc": { "de": "Nach dem Angriff bewegt sich der Tornado gerade vorwärts." }
+                    }
+                ]
+            },
+            {
+                "type": "heathcliff",
+                "entries": [
+                    {
+                        "name": { "de": "Elementvariable Ritterliche Phalanx & Wasserschwächenschaden+" },
+                        "desc": { "de": "Wandelt Angriffe in Wasserangriffe um. Erhöht den Schaden von Wasserangriffen bei Feinden mit Wasserschwäche um 20%." }
+                    },
+                    {
+                        "name": { "de": "Göttlicher Kreis mit Überladung" },
+                        "desc": { "de": "Erhöht die Aufladung um 1." }
+                    },
+                    {
+                        "name": { "de": "Ritterliche Phalanx: Umgebung" },
+                        "desc": { "de": "Erzeugt einen Schild vor dir und um dich herum, der Feinde bei Berührung verletzt und ihre Projektile auhält." }
+                    },
+                    {
+                        "name": { "de": "Paladins Provokation mit Flächenangriff+" },
+                        "desc": { "de": "Gewährt Provozieren und erweitert den Wirkungsbereich des Flächenangriffs." }
+                    }
+                ]
+            },
+            {
+                "type": "alice",
+                "entries": [
+                    {
+                        "name": { "de": "Betäubender Ringelblumenschlitzer" },
+                        "desc": { "de": "Schlitzschaden wird erhöht. Gewärt eine CHance, dass Treffer betäuben." }
+                    },
+                    {
+                        "name": { "de": "Elementarvariabler Toukazan & Windschwächenschaden+" },
+                        "desc": { "de": "Wandelt Angriffe in Windangriffe um. Erhöht den Schaden von Windangriffen bei Feinden mit Windschwäche um 20%." }
+                    }
+                ]
+            },
+            {
+                "type": "strea",
+                "entries": [
+                    {
+                        "name": { "de": "Quell des Chaos + ANG+" },
+                        "desc": { "de": "Gewährt innerhalb des markierten Bereichs ANG+ und LP-Absorption" }
+                    }
+                ]
+            },
+            {
+                "type": "argo",
+                "entries": [
+                    {
+                        "name": { "de": "Notfallsprung mit Aufladung" },
+                        "desc": { "de": "Lädt automatisch auf und greift an. Abklingzeit für eine erneute Nutzung ist länger, dafür ist der Schaden erhöht." }
+                    },
+                    {
+                        "name": { "de": "Giftiger Todesstoß" },
+                        "desc": { "de": "Gewährt eine Chance, dass Treffer vergiften." }
+                    },
+                    {
+                        "name": { "de": "Betäubender wilder Sturzflug" },
+                        "desc": { "de": "Gewährt nach Treffer mit Kombo und Druckwelle eine Chance, den Feind zu betäuben." }
+                    }
+                ]
+            },
+            {
+                "type": "llenn",
+                "entries": [
+                    {
+                        "name": { "de": "Gleitschuss mit Druckwelle" },
+                        "desc": { "de": "Trifft der Nachsetzer per Salto, werden umstehende Feinde von einer Druckwelle weggeschleudert." }
+                    },
+                    {
+                        "name": { "de": "Elementvariabler Bombentepich & Blitzschächenschaden+" },
+                        "desc": { "de": "Wandelt Angriffe in Blitzangriffe um. Erhöht den Schaden von Blitzangriffen bei Feinden mit Blitzschwäche um 20%." }
+                    },
+                    {
+                        "name": { "de": "Berserkerkanichen mit Aufladung" },
+                        "desc": { "de": "Lädt automatisch auf und greift an. Erhöht den Schaden, du bist aber länger verwundbar." }
+                    },
+                    {
+                        "name": { "de": "Landmine für Bombenteppich" },
+                        "desc": { "de": "Explosionsschaden wird erhöht. Bleibt nach dem Einsatz kurz inaktiv, wenn kein Feind in Reichweite ist." }
+                    }
+                ]
+            },
+            {
+                "type": "eiji",
+                "entries": [
+                    {
+                        "name": { "de": "Frostiger Schneller Vorstoß" },
+                        "desc": { "de": "Gewährt eine Chance, dass Treffer des Finishers einfrieren." }
+                    },
+                    {
+                        "name": { "de": "Elementarvariabler Phantomwirbel & Wasserschwächenschaden+" },
+                        "desc": { "de": "Wandelt Angriffe in Wasserangriffe um. Erhöht den Schaden von Wasserangriffen bei Feinden mit Wasserschwäche um 20%." }
+                    },
+                    {
+                        "name": { "de": "Phantomwirbel mit Überladung" },
+                        "desc": { "de": "Erhöht die Aufladungsstufe um 1." }
+                    }
+                ]
+            },
+            {
+                "type": "yuuki",
+                "entries": [
+                    {
+                        "name": { "de": "Teufels Elementvariebles Urteil & Lichschächenschaden+" },
+                        "desc": { "de": "Wandelt Angriffe in Lichangriffe um. Erhöht den Schadenvon Lichtangriffen um 20%." }
+                    },
+                    {
+                        "name": { "de": "Betäubender tödlicher Schlag" },
+                        "desc": { "de": "Aufladen nicht mehr möglich. Treffer können aber das Ziel betäuben." }
+                    },
+                    {
+                        "name": { "de": "Vertikalfeld: Frost" },
+                        "desc": { "de": "Gewährt nach Treffer mit Kombo und Druckwelle eine Chance, den Feind einzufrieren." }
+                    }
+                ]
+            },
+            {
+                "type": "sinon",
+                "entries": [
+                    {
+                        "name": { "de": "Elementarvariables Schwerkraftprojektil & Windschwächenschaden+" },
+                        "desc": { "de": "Wandelt Angriffe in Windangriffe um. Erhöht den Schaden bei Feinden mit Windschwäche um 20%." }
+                    },
+                    {
+                        "name": { "de": "Landmine für Schwerkraftprojektil" },
+                        "desc": { "de": "Exlosionsschaden wird erhöht. Bleibt nach dem Einsatz kurz inaktiv, wenn kein Feind in Reichweite ist." }
+                    },
+                    {
+                        "name": { "de": "Triosalven-Sperrfeuer" },
+                        "desc": { "de": "Erhöht die Anzahl verschossener Projektile, verringert aber die Reichweite." }
+                    },
+                    {
+                        "name": { "de": "Betäubende Tellermine" },
+                        "desc": { "de": "Explosionsschaden wird erhöht. Gewährt eine Chance, das Explosionen betäuben." }
+                    }
+                ]
+            },
+            {
+                "type": "fukaziroh",
+                "entries": [
+                    {
+                        "name": { "de": "Sturmsalven-Multischuss" },
+                        "desc": { "de": "Du fliegst in die Luft und feuert gleichzeitig mit jedem Werfer zwei Schüsse ab." }
+                    },
+                    {
+                        "name": { "de": "Heilgranate mit Schadensreduktion" },
+                        "desc": { "de": "Regeneriert LP und gewährt Schadensreduktion." }
+                    }
+                ]
+            },
+            {
+                "type": "mortis",
+                "entries": [
+                    {
+                        "name": { "de": "Sternenspritzer mit Aufladung" },
+                        "desc": { "de": "Lädt automatisch auf und greift an. Erhöht den Schaden, du bist aber länger verwundbar." }
+                    }
+                ]
+            },
+            {
+                "type": "administrator",
+                "entries": [
+                    {
+                        "name": { "de": "Herrschers Elementarvariebles Urteil & Blitzschwächenschaden+" },
+                        "desc": { "de": "Wandelt Angriffe in Blitzangriffe um. Erhöht den Schaden von Blitzangriffen bei Feinden mit Blitzschwäche um 20%." }
+                    },
+                    {
+                        "name": { "de": "Herrschers hartes Urteil" },
+                        "desc": { "de": "Erhöht den Schaden, reduziert aber die Reichweite." }
+                    },
+                    {
+                        "name": { "de": "Grausamer Tanz mit Aufladung" },
+                        "desc": { "de": "Lädt automatisch auf und greift an. Erhöht den Schaden, du bist aber länger verwundbar." }
+                    }
+                ]
+            },
+            {
+                "type": "eugeo",
+                "entries": [
+                    {
+                        "name": { "de": "Elementvariabler Eislanzensturm & Lichtschwächenschaden+" },
+                        "desc": { "de": "Wandelt Angriffe in Lichangriffe um. Erhöht den Schaden von Lichtangriffen bei Feinden mit Lichschwäche um 20%." }
+                    },
+                    {
+                        "name": { "de": "Frostbarriere mit Kritische Trefferrate+" },
+                        "desc": { "de": "Gewährt Gruppenmitgliedern im Angriffsbereich Kritische Trefferrate+." }
+                    }
+                ]
+            },
+            {
+                "type": "oberon",
+                "entries": [
+                    {
+                        "name": { "de": "Großes Excalibur mit ANG+" },
+                        "desc": { "de": "Gewährt Gruppenmitgliedern im Angriffsbereich ANG+." }
+                    },
+                    {
+                        "name": { "de": "Giftiges Gravitationsfeld" },
+                        "desc": { "de": "Gewährt eine Chance, dass Treffer vergiften, anstatt Feinde zu verlangsamen." }
+                    }
+                ]
+            },
+            {
+                "type": "leafa",
+                "entries": [
+                    {
+                        "name": { "de": "Kämfende Klinge mit Aufladung" },
+                        "desc": { "de": "Lädt automatisch auf und greift an. Erhöht den Schaden, du bist aber länger verwundbar." }
+                    }
+                ]
+            },
+            {
+                "type": "silica",
+                "entries": [
+                    {
+                        "name": { "de": "Illusionsklaue mit Aufladung" },
+                        "desc": { "de": "Lädt automatisch auf und greift an. Abklingzeit für eine erneute Nutzung ist länger, dafür ist der Schaden erhöht." }
+                    },
+                    {
+                        "name": { "de": "Blenden & Blitz : Frost" },
+                        "desc": { "de": "Gewährt eine Chance, dass Treffer des Blasenodems einfrieren." }
+                    },
+                    {
+                        "name": { "de": "Heilender Hauch mit Schadensreduktion" },
+                        "desc": { "de": "Verringert die LP-Regeneration und gewährt Schadensreduktion." }
+                    }
+                ]
+            },
+            {
+                "type": "yuna",
+                "entries": [
+                    {
+                        "name": { "de": "Elementarevariable Energiewelle & Lichtschwächenschaden+" },
+                        "desc": { "de": "Wandelt Angriffe in Lichtangriffe um. Erhöht den Schaden von Lichtangriffen bei Feinden mit Lichtschwäche um 20%." }
+                    },
+                    {
+                        "name": { "de": "Energiewelle mit LP-Widerherstellung" },
+                        "desc": { "de": "Verursacht weniger Schaden, heilt aber Gruppenmitglieder im Angriffsbereich." }
+                    }
+                ]
+            },
+            {
+                "type": "yui",
+                "entries": [
+                    {
+                        "name": { "de": "Jubel mit ANG+" },
+                        "desc": { "de": "Verringert die LP-Regeneration und gewährt ANG+." }
+                    },
+                    {
+                        "name": { "de": "Jubel mit Schadensreduktion" },
+                        "desc": { "de": "Verringert die LP-Regeneration und gewährt Schadensreduktion." }
+                    },
+                    {
+                        "name": { "de": "Mehr Kugeln für Satellitenkugel" },
+                        "desc": { "de": "Erhöht die Anzahl an Kugeln." }
+                    }
+                ]
+            },
+            {
                 "type": "ring",
                 "entries": [
                     {
@@ -198,6 +540,28 @@
         "weak": { "en": "Weakness", "de": "Schwäche" },
         "res": { "en": "Resistence", "de": "Resistenz" },
         "specialeffects": { "en": "Special Effect", "de": "Special Effekt" },
+        "kirito": { "i": "Kirito" },
+        "asuna": { "i": "Asuna" },
+        "lisbeth": { "i": "Lisbeth" },
+        "klein": { "i": "Klein" },
+        "agil": { "i": "Agil" },
+        "heathcliff": { "i": "Heathcliff" },
+        "alice": { "i": "Alice" },
+        "strea": { "i": "Strea" },
+        "argo": { "i": "Argo" },
+        "llenn": { "i": "LLENN" },
+        "eiji": { "i": "Eiji" },
+        "yuuki": { "i": "Yuuki" },
+        "sinon": { "i": "Sinon" },
+        "fukaziroh": { "i": "Fukaziroh" },
+        "mortis": { "i": "Mortis" },
+        "administrator": { "i": "Administrator" },
+        "eugeo": { "i": "Eugeo" },
+        "oberon": { "i": "Oberon" },
+        "leafa": { "i": "Leafa" },
+        "silica": { "i": "Silica" },
+        "yuna": { "i": "Yuna" },
+        "yui": { "i": "Yui" },
         "ring": { "en": "Ring", "de": "Ring" },
         "bracelet": { "en": "Bracelet", "de": "Armband" },
         "necklace": { "en": "Necklace", "de": "Halskette" },
