@@ -439,28 +439,32 @@
                 "type": "ring",
                 "entries": [
                     {
-                        "name": { "de": "Unverwundbarkeit+ bei Sprint" },
-                        "desc": { "de": "Verlängert die Unverwundbarkeit beim Sprinten." }
+                        "name": { "en": "Extend Dash Invincibility Duration", "de": "Unverwundbarkeit+ bei Sprint" },
+                        "desc": { "en": "Increase duration of invincibility while dashing.", "de": "Verlängert die Unverwundbarkeit beim Sprinten." }
                     },
                     {
-                        "name": { "de": "Angriff durch Sprint" },
-                        "desc": { "de": "Fügt beim Sprinten umstehenden Feinden Schaden zu." }
+                        "name": { "en": "Attack On Dash", "de": "Angriff durch Sprint" },
+                        "desc": { "en": "Deals damage to surrounding enemies when dashing.", "de": "Fügt beim Sprinten umstehenden Feinden Schaden zu." }
                     },
                     {
-                        "name": { "de": "Krit. Treffer durch Perfektes Ausweichen" },
-                        "desc": { "de": "Nach Perfekten Ausweichen landen alle Angriffe einige Zeit lang kritische Treffer." }
+                        "name": { "en": "Guaranteed Critical on Perfect Dodge", "de": "Krit. Treffer durch Perfektes Ausweichen" },
+                        "desc": { "en": "All attacks are guaranteed critical for a time after a successful Perfect Dodge.", "de": "Nach Perfekten Ausweichen landen alle Angriffe einige Zeit lang kritische Treffer." }
                     },
                     {
                         "name": { "de": "Kürzeres Cool-down durch Perfektes Blocken" },
                         "desc": { "de": "Perfektes Blocken beschleunigt die Abklingzeit aller Erweiterten Skills um 20%." }
                     },
                     {
-                        "name": { "de": "Flugtempo+" },
-                        "desc": { "de": "Erhöht das Flugtempo um 50%." }
+                        "name": { "en": "Flying Speed UP", "de": "Flugtempo+" },
+                        "desc": { "en": "Speed while flying is increased by 50%, flight gauge recovers 30% faster.", "de": "Erhöht das Flugtempo um 50%." }
                     },
                     {
-                        "name": { "de": "Kombo-Startfenster+" },
-                        "desc": { "de": "Verlängert das Startfenster der Kombo um 50%." }
+                        "name": { "en": "Extend Combo Opening Time", "de": "Kombo-Startfenster+" },
+                        "desc": { "en": "Increase the combo counter's opening time by 100%.", "de": "Verlängert das Startfenster der Kombo um 100%." }
+                    },
+                    {
+                        "name": { "en": "Omni-Guard & Guard Damage Reduction" },
+                        "desc": { "en": "Able to guard agains attacks from all directions. Damage Reduction UP by 20% when guarding." }
                     }
                 ]
             },
@@ -468,40 +472,52 @@
                 "type": "bracelet",
                 "entries": [
                     {
-                        "name": { "de": "Regeneration+ mit Heilkristallen" },
-                        "desc": { "de": "Erhöht die Regeneration mit Heilkristallen um 50%." }
+                        "name": { "en": "Healing Crystal Recovery Amount UP", "de": "Regeneration+ mit Heilkristallen" },
+                        "desc": { "en": "Increase the recovery amount of Healing Crystals by 50%.", "de": "Erhöht die Regeneration mit Heilkristallen um 50%." }
                     },
                     {
-                        "name": { "de": "Kürzeres Cool-down durch Schwachpunktangriffe" },
-                        "desc": { "de": "Beschleunigt das Cool-down eines zufällig ausgewählten Erweiterten Skills, wenn du einen Schwachpunkt angreifst." }
+                        "name": { "en": "Recover HP on Critical" },
+                        "desc": { "en": "Recovers HP upon dealing critical damage from an Advanced Skill or Ultimate." }
                     },
                     {
-                        "name": { "de": "Kürzeres Cool-down bei Max. LP" },
-                        "desc": { "de": "Beschleunigt das Cool-down aller Erweiterten Skills um 20%, wenn du bei Max. LP bist." }
+                        "name": { "en": "Skill Cooldown on Critical" },
+                        "desc": { "en": "Increase tge cooldown speed of a random Advanced Skill updon dealing critical damage." }
                     },
                     {
-                        "name": { "de": "Regeneration+ für Fluganzeige" },
-                        "desc": { "de": "Beschleunigt die Erholung der Fluganzeige um 50%." }
+                        "name": { "en": "Skill Cooldown on Weak Point Attack", "de": "Kürzeres Cool-down durch Schwachpunktangriffe" },
+                        "desc": { "en": "Decrease the cooldown time of a random Advanced Skill upon attacking a Weak Spot.", "de": "Beschleunigt das Cool-down eines zufällig ausgewählten Erweiterten Skills, wenn du einen Schwachpunkt angreifst." }
+                    },
+                    {
+                        "name": { "en": "Faster Skill Cooldown at Max HP", "de": "Kürzeres Cool-down bei Max. LP" },
+                        "desc": { "en": "Increase the cooldown speed of all Advanced Skills by 20% when at Max HP.", "de": "Beschleunigt das Cool-down aller Erweiterten Skills um 20%, wenn du bei Max. LP bist." }
+                    },
+                    {
+                        "name": { "en": "Flight Gauge Recovery Speed UP", "de": "Regeneration+ für Fluganzeige" },
+                        "desc": { "en": "Flight gauge recovers 50% faster, speed while flying is increased by 30.", "de": "Beschleunigt die Erholung der Fluganzeige um 50%." }
                     },
                     {
                         "name": { "de": "Nahkampfschaden absorbieren" },
                         "desc": { "de": "Regeneriert 0,5% des Schadens durch Nahkampfangriffe als LP." }
                     },
                     {
-                        "name": { "de": "Kürzeres Cool-down bei Block" },
-                        "desc": { "de": "Beschleunigt das Cool-down eines zufällig ausgewählten Erweiterten Skills um 20%, wenn du einen Angriff blockst." }
+                        "name": { "en": "Extra Healing Crystals" },
+                        "desc": { "en": "Increase Healing Crystal charges by 1." }
                     },
                     {
-                        "name": { "de": "Kein Cool-down der Fertigkeit bei Kombo" },
-                        "desc": { "de": "Treffer mit einer 100er Kombo setzen die Abklingzeit eines zufällig ausgewählten Erweiterten Skills zurück." }
+                        "name": { "en": "Skill Cooldown on Guarding", "de": "Kürzeres Cool-down bei Block" },
+                        "desc": { "en": "Decrease the cooldown time of a random Advanced Skill by 20% upon guarding an attack.", "de": "Beschleunigt das Cool-down eines zufällig ausgewählten Erweiterten Skills um 20%, wenn du einen Angriff blockst." }
                     },
                     {
-                        "name": { "de": "Chance auf Heilungsbeute von Feinden" },
-                        "desc": { "de": "Besiegte Feinde hinterlassen mit einer Chance von 10% Heilgegenstände." }
+                        "name": { "en": "Instant Skill Cooldown on Combo", "de": "Kein Cool-down der Fertigkeit bei Kombo" },
+                        "desc": { "en": "Instantly resets the cooldown of a random Advanced Skill upon a 70 hit Combo.", "de": "Treffer mit einer 70er Kombo setzen die Abklingzeit eines zufällig ausgewählten Erweiterten Skills zurück." }
                     },
                     {
-                        "name": { "de": "Anzeige+ für Einzigartige Skills" },
-                        "desc": { "de": "Die Anzeige für Einzigartige Skills wächst schneller." }
+                        "name": { "en": "Chance for Enemies to Drop Healing Items", "de": "Chance auf Heilungsbeute von Feinden" },
+                        "desc": { "en": "Enemies have a 25% chance to drop healing items when defeated.", "de": "Besiegte Feinde hinterlassen mit einer Chance von 25% Heilgegenstände." }
+                    },
+                    {
+                        "name": { "en": "Unique Skill Charge Speed UP", "de": "Anzeige+ für Einzigartige Skills" },
+                        "desc": { "en": "Unique Skill gauge charges up more easily.", "de": "Die Anzeige für Einzigartige Skills wächst schneller." }
                     }
                 ]
             },
@@ -509,28 +525,32 @@
                 "type": "necklace",
                 "entries": [
                     {
-                        "name": { "de": "Kürzeres Cool-down bei fallenden LP" },
-                        "desc": { "de": "Beschleunigt das Cool-down Erweiterter Skills basierend auf den verbleibenden LP. Je weniger LP du hast, desto schneller vergeht die Abklingzeit." }
+                        "name": { "en": "Faster Skill Cooldown as HP Gets Low", "de": "Kürzeres Cool-down bei fallenden LP" },
+                        "desc": { "en": "Increase cooldown speed of Advanced Skills based on remaining HP. The lower your HP, the faster the cooldown.", "de": "Beschleunigt das Cool-down Erweiterter Skills basierend auf den verbleibenden LP. Je weniger LP du hast, desto schneller vergeht die Abklingzeit." }
                     },
                     {
-                        "name": { "de": "Blockschadenreduktion & Max. LP -50%" },
-                        "desc": { "de": "Erhöht die Schadensreduktion beim Blocken auf 100% und reduziert gleichzeitig Max. LP um 50%." }
+                        "name": { "en": "Skill Cooldown Reduction on HP Loss" },
+                        "desc": { "en": "Decreases the cooldown time of a random Advanced Skill by the percentage of Max HP lost upon taking damage." }
                     },
                     {
-                        "name": { "de": "Schaden+ für Erw. Skills gegen 5% LP" },
-                        "desc": { "de": "Verbrauche 5% deiner Max. LP beim Einsatz offensiver Erweiterter Skills, um den Schaden um 30% zu erhöhen." }
+                        "name": { "en": "Guard Damage Reduction & Max HP 30% DOWN", "de": "Blockschadenreduktion & Max. LP -30%" },
+                        "desc": { "en": "Reduces damage received while guarding by 100%, while reducing Max HP by 30%.", "de": "Erhöht die Schadensreduktion beim Blocken auf 100% und reduziert gleichzeitig Max. LP um 30%." }
                     },
                     {
-                        "name": { "de": "-25% Max. LP & Ultimate-Abklingzeit+ nach Perf. Block 15%" },
-                        "desc": { "de": "Beschleunigt die Abklingzeit von Ultimates um 15% bei Perfektem Blocken. Reduziert Max. LP um 25%." }
+                        "name": { "en": "Use 5% HP to Increase Advanced Skill Damage", "de": "Schaden+ für Erw. Skills gegen 5% LP" },
+                        "desc": { "en": "When using offensive Advanced Skills, consume 5% of your Max HP to increase damage by 30%.", "de": "Verbrauche 5% deiner Max. LP beim Einsatz offensiver Erweiterter Skills, um den Schaden um 30% zu erhöhen." }
                     },
                     {
-                        "name": { "de": "ANG+ & Max. LP -25%" },
-                        "desc": { "de": "Erhöht ANG um 20%, reduziert aber Max. LP um 25%." }
+                        "name": { "en": "Max HP 25% DOWN & Faster Ultimate Cooldown after Perfect Guard.", "de": "-25% Max. LP & Ultimate-Abklingzeit+ nach Perf. Block" },
+                        "desc": { "en": "Increase cooldown speed of Ultimates by 15% upon achieving a Perfect Guard, while decreasing Max HP by 25%.", "de": "Beschleunigt die Abklingzeit von Ultimates um 15% bei Perfektem Blocken. Reduziert Max. LP um 25%." }
                     },
                     {
-                        "name": { "de": "Kirtische Rate+ bei fallenden LP" },
-                        "desc": { "de": "Erhöht die Kritische Trefferrate bei fallenden LP. Je niedriger deine LP, desto höher deine Kritische Trefferrate." }
+                        "name": { "en": "Attack UP & Max HP 25% DOWN", "de": "ANG+ & Max. LP -25%" },
+                        "desc": { "en": "Increase attack by 20%, but reduces Max HP by 25%.", "de": "Erhöht ANG um 20%, reduziert aber Max. LP um 25%." }
+                    },
+                    {
+                        "name": { "en": "Critical Rate UP as HP Gets Low", "de": "Kirtische Rate+ bei fallenden LP" },
+                        "desc": { "en": "Increase the Critical Rate as HP decreases. The lower your HP the higher the Critical Rate.", "de": "Erhöht die Kritische Trefferrate bei fallenden LP. Je niedriger deine LP, desto höher deine Kritische Trefferrate." }
                     }
                 ]
             }
