@@ -339,11 +339,10 @@ export default function App() {
 
     useEffect(() => {
         const handleKeyDown = (e) => {
-            // Avoid triggering inside input fields
             if (e.key === '/' && document.activeElement.tagName !== 'INPUT') {
                 e.preventDefault();
                 document.getElementById('search-input')?.focus();
-                setQuery(''); // optionally clear previous query
+                setQuery('');
             }
         };
 
