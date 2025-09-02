@@ -64,42 +64,53 @@ function getElementLabel(key, elements) {
     return elements[key] || `[MISSING] ${key}`
 }
 
-function ExtractQuests({title, questList, typeList, language}) {
+function ExtractQuests({ title, questList = [], typeList, language }) {
+    if (!questList.length) return null;
+
     return (
-        <div>
-            <h2 className="quest-type-header"> {title} </h2>
+        <section>
+            <h2 className="quest-type-header">{title}</h2>
             <div className="quest-grid">
                 {questList.map((quest, index) => (
                     <div key={quest.id + index} className="quest-card">
                         <h3>{quest.nameText}</h3>
-                        <p> {typeList.weak[language] + ": " + quest.weakText} </p>
-                        <p> {typeList.res[language] + ": " + quest.resText} </p>
+                        <p>{`${typeList.weak[language]}: ${quest.weakText}`}</p>
+                        <p>{`${typeList.res[language]}: ${quest.resText}`}</p>
                     </div>
                 ))}
             </div>
-        </div>
+        </section>
     );
 }
 
-function ExtractSpecialEffects({ title, effectList = [], language }) {
+function ExtractSpecialEffects({ title, effectList = [], effectId}) {
+  if (!effectList.length) return null;
+
+
     return (
-        <div>
+        <section>
             <h2 className="effect-type-header">{title}</h2>
             <div className="effect-grid">
                 {effectList.map((effect, index) => (
-                    <div key={index} className="effect-card">
+                    <div key={effectId + index} className="effect-card">
                         <h3>{effect.nameText}</h3>
                         <p>{effect.descText}</p>
                     </div>
                 ))}
             </div>
-        </div>
+        </section>
     );
 }
 
 export default function App() {
     const [data, setData] = useState(null);
     const [language, setLanguage] = useState(LANG_EN);
+    const [query, setQuery] = useState("");
+    const [filteredData, setFilteredData] = useState({
+        bossQuests: [],
+        coopQuests: [],
+        specialEffects: []
+    });
 
     useEffect(() => {
         const url = getDataURL();
@@ -110,38 +121,123 @@ export default function App() {
             .catch((err) => console.error('Error loading data:', err));
     }, []);
 
-    let bossQuests = []
-    let coopQuests = []
-    let specialEffects = []
-
-    if (data) {
-        bossQuests = data.quests
+    const bossQuests = useMemo(() => {
+        if (!data) return [];
+        return data.quests
             .filter(q => q.id === "boss")
             .map(q => ({
-                ...q,
+                id: q.id,
                 nameText: getTranslation(q.name, language),
                 weakText: getElementLabel(q.weak, data.elements[language]),
                 resText:  getElementLabel(q.res, data.elements[language])
             }));
+    }, [data, language]);
 
-        coopQuests = data.quests
+    const coopQuests = useMemo(() => {
+        if (!data) return [];
+        return data.quests
             .filter(q => q.id === "coop")
             .map(q => ({
-                ...q,
+                id: q.id,
                 nameText: getTranslation(q.name, language),
                 weakText: getElementLabel(q.weak, data.elements[language]),
                 resText:  getElementLabel(q.res, data.elements[language])
             }));
+    }, [data, language]);
 
-        specialEffects = data.specialeffects.pieces.map(piece => ({
-            type: piece.type,
+    const specialEffects = useMemo(() => {
+        if (!data) return [];
+        return data.specialeffects.map(piece => ({
+            id: piece.id,
             entries: piece.entries.map(effect => ({
-                ...effect,
                 nameText: getTranslation(effect.name, language),
                 descText: getTranslation(effect.desc, language),
             }))
         }));
-    }
+    }, [data, language]);
+
+    const searchable = useMemo(() => {
+        if (!data) return [];
+        return [
+            ...bossQuests.map(q => ({
+                categoryKey: "bossQuests",
+                category: getTranslation(data.types.boss, language),
+                id: q.id,
+                name: q.nameText,
+                weak: q.weakText,
+                res: q.resText
+            })),
+            ...coopQuests.map(q => ({
+                categoryKey: "coopQuests",
+                category: getTranslation(data.types.coop, language),
+                id: q.id,
+                name: q.nameText,
+                weak: q.weakText,
+                res: q.resText
+            })),
+            ...specialEffects.flatMap(piece =>
+                piece.entries.map(effect => ({
+                    categoryKey: "specialEffects",
+                    category: getTranslation(data.types.specialeffects, language) + " - " + getTranslation(data.types[piece.id], language),
+                    id: piece.id,
+                    name: effect.nameText,
+                    desc: effect.descText
+                }))
+            )
+        ];
+    }, [data, language, bossQuests, coopQuests, specialEffects]);
+
+    const fzf = useMemo(() => new Fzf(searchable, {
+        selector: (item) => `${item.category} (${item.name} ${item.weak || ""} ${item.res || ""} ${item.desc || ""})`,
+    }), [searchable]);
+
+    useEffect(() => {
+        if (!query) {
+            setFilteredData({
+                bossQuests,
+                coopQuests,
+                specialEffects,
+            });
+            return;
+        }
+
+        const matches = fzf.find(query).map(m => m.item);
+
+        const grouped = {
+            bossQuests: matches
+            .filter(m => m.categoryKey === "bossQuests")
+            .map(m => ({
+                id: m.id,
+                nameText: m.name,
+                weakText: m.weak,
+                resText: m.res
+            })),
+            coopQuests: matches
+            .filter(m => m.categoryKey === "coopQuests")
+            .map(m => ({
+                id: m.id,
+                nameText: m.name,
+                weakText: m.weak,
+                resText: m.res
+            })),
+            specialEffects: Object.values(
+                matches
+                    .filter(m => m.categoryKey === "specialEffects")
+                    .reduce((acc, m) => {
+                        if (!acc[m.id]) acc[m.id] = { id: m.id, entries: [] };
+                        acc[m.id].entries.push({
+                            nameText: m.name,
+                            descText: m.desc
+                        });
+                        return acc;
+                    }, {})
+            )
+        };
+
+        setFilteredData(grouped);
+    }, [query, fzf, bossQuests, coopQuests, specialEffects]);
+
+        console.log("Filtered Data", filteredData)
 
     return (
         <div className="App">
@@ -160,24 +256,33 @@ export default function App() {
             <main>
                 {data ? (
                     <>
-                        <ExtractQuests
-                            title={getTranslation(data.types.coop, language)}
-                            questList={coopQuests}
-                            typeList={data.types}
-                            language={language}
+                        <input
+                            type="text"
+                            placeholder="Search..."
+                            value={query}
+                            onChange={(e) => setQuery(e.target.value)}
                         />
+
                         <ExtractQuests
                             title={getTranslation(data.types.boss, language)}
-                            questList={bossQuests}
+                            questList={filteredData.bossQuests}
                             typeList={data.types}
                             language={language}
                         />
-                        {specialEffects.map((piece, i) => (
+
+                        <ExtractQuests
+                            title={getTranslation(data.types.coop, language)}
+                            questList={filteredData.coopQuests}
+                            typeList={data.types}
+                            language={language}
+                        />
+
+                        {filteredData.specialEffects.map((piece, i) => (
                             <ExtractSpecialEffects
-                                key={piece.type + i}
-                                title={getTranslation(data.types.specialeffects, language) + " - " + getTranslation(data.types[piece.type], language)}
+                                key={piece.id + i}
+                                title={getTranslation(data.types.specialeffects, language) + " - " + getTranslation(data.types[piece.id], language)}
                                 effectList={piece.entries}
-                                language={language}
+                                effectId={piece.id}
                             />
                         ))}
                     </>
