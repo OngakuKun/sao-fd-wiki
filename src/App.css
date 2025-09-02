@@ -35,27 +35,35 @@ html, body, #root, .App {
     align-items: center;
     margin: 8px auto;
     margin-left: 16px;
+    outline: 0;
 }
 
-.App-header-search {
-    display: flex;
-    flex-direction: row;
-    justify-content: end;
-    align-items: center;
-    margin: 8px auto;
-    margin-right: 16px;
+.App-header-search-bar {
+    display: inline-flex;
+    background-color: var(--ctp-macchiato-crust);
+    color: var(--ctp-macchiato-text);
+    width: 250px;
+    border: 2px solid var(--ctp-macchiato-crust);
+    border-radius: 8px;
+    margin: 0px 16px;
+    padding: 8px;
+    padding-right: 16px;
+    transition: all 0.3s;
 }
 
-.App-header-search-kbd {
-    padding: 0px;
-    display: inline-grid;
-    border: 1px solid var(--ctp-macchiato-text);
-    border-radius: 4px;
-    font-size: 12px;
-    box-shadow: none;
-    width: 16px;
-    height: 16px;
-    vertical-align: baseline;
+.App-header-search-bar:focus {
+    display: inline-flex;
+    background-color: var(--ctp-macchiato-crust);
+    color: var(--ctp-macchiato-text);
+    width: 250px;
+    box-shadow: 0 0 4px var(--ctp-macchiato-blue);
+    border: 2px solid var(--ctp-macchiato-blue);
+    border-radius: 8px;
+    outline: none;
+    margin: 0px 16px;
+    padding: 8px;
+    padding-right: 16px;
+    transition: all 0.3s;
 }
 
 .lang-switcher {
