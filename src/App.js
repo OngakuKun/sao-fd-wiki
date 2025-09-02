@@ -336,7 +336,6 @@ export default function App() {
         setFilteredData(grouped);
     }, [query, fzf, bossQuests, coopQuests, specialEffects]);
 
-        console.log("Filtered Data", filteredData)
     useEffect(() => {
         const handleKeyDown = (e) => {
             // Avoid triggering inside input fields
