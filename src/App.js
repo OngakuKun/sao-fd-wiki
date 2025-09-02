@@ -392,7 +392,7 @@ export default function App() {
 
                         {filteredData.specialEffects.map((piece, i) => (
                             <ExtractSpecialEffects
-                                key={piece.id + i}
+                                key={`quest-${piece.id}-${i}`}
                                 title={getTranslation(data.types.specialeffects, language) + " - " + getTranslation(data.types[piece.id], language)}
                                 effectList={piece.entries}
                                 effectId={piece.id}
