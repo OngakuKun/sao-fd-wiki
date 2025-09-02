@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/sao-fd-wiki/static/css/main.bf93faf1.css",
-    "main.js": "/sao-fd-wiki/static/js/main.89260c33.js",
+    "main.css": "/sao-fd-wiki/static/css/main.d320fd27.css",
+    "main.js": "/sao-fd-wiki/static/js/main.8fe0d377.js",
     "static/js/453.f954f186.chunk.js": "/sao-fd-wiki/static/js/453.f954f186.chunk.js",
     "index.html": "/sao-fd-wiki/index.html",
-    "main.bf93faf1.css.map": "/sao-fd-wiki/static/css/main.bf93faf1.css.map",
-    "main.89260c33.js.map": "/sao-fd-wiki/static/js/main.89260c33.js.map",
+    "main.d320fd27.css.map": "/sao-fd-wiki/static/css/main.d320fd27.css.map",
+    "main.8fe0d377.js.map": "/sao-fd-wiki/static/js/main.8fe0d377.js.map",
     "453.f954f186.chunk.js.map": "/sao-fd-wiki/static/js/453.f954f186.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.bf93faf1.css",
-    "static/js/main.89260c33.js"
+    "static/css/main.d320fd27.css",
+    "static/js/main.8fe0d377.js"
   ]
 }
