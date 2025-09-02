@@ -64,18 +64,62 @@ function getElementLabel(key, elements) {
     return elements[key] || `[MISSING] ${key}`
 }
 
-function ExtractQuests({ title, questList = [], typeList, language }) {
-    if (!questList.length) return null;
+function Highlight({ text, indices }) {
+    if (!text) return null;
+    if (!indices || indices.size === 0) return <>{text}</>;
+
+    const result = [];
+    let buffer = "";
+    let inHighlight = false;
+
+    for (let i = 0; i < text.length; i++) {
+        const shouldHighlight = indices.has(i);
+
+        if (shouldHighlight !== inHighlight && buffer) {
+            // flush previous buffer
+            result.push(
+                inHighlight ? <mark key={result.length}>{buffer}</mark> : <span key={result.length}>{buffer}</span>
+            );
+            buffer = "";
+        }
+
+        buffer += text[i];
+        inHighlight = shouldHighlight;
+    }
+
+    // flush last buffer
+    if (buffer) {
+        result.push(
+            inHighlight ? <mark key={result.length}>{buffer}</mark> : <span key={result.length}>{buffer}</span>
+        );
+    }
+
+    return <>{result}</>;
+}
+
+function ExtractQuests({ title, questList, typeList, language }) {
+    if (questList.length === 0) return null;
 
     return (
         <section>
-            <h2 className="quest-type-header">{title}</h2>
+            {/* Category header */}
+            <h2 className="quest-type-header">
+                <Highlight text={title} indices={questList[0]._indices?.categoryIndices} />
+            </h2>
             <div className="quest-grid">
-                {questList.map((quest, index) => (
-                    <div key={quest.id + index} className="quest-card">
-                        <h3>{quest.nameText}</h3>
-                        <p>{`${typeList.weak[language]}: ${quest.weakText}`}</p>
-                        <p>{`${typeList.res[language]}: ${quest.resText}`}</p>
+                {questList.map((quest, i) => (
+                    <div key={`quest-${quest.id}-${i}`} className="quest-card">
+                        <h3>
+                            <Highlight text={quest.nameText} indices={quest._indices?.nameIndices} />
+                        </h3>
+                        <p>
+                            {`${typeList.weak[language]}: `}
+                            <Highlight text={quest.weakText} indices={quest._indices?.weakIndices} />
+                        </p>
+                        <p>
+                            {`${typeList.res[language]}: `}
+                            <Highlight text={quest.resText} indices={quest._indices?.resIndices} />
+                        </p>
                     </div>
                 ))}
             </div>
@@ -83,18 +127,25 @@ function ExtractQuests({ title, questList = [], typeList, language }) {
     );
 }
 
-function ExtractSpecialEffects({ title, effectList = [], effectId}) {
-  if (!effectList.length) return null;
-
+function ExtractSpecialEffects({ title, effectList, language }) {
+    if (effectList.length === 0) return null;
 
     return (
         <section>
-            <h2 className="effect-type-header">{title}</h2>
+            {/* Category header */}
+            <h2 className="quest-type-header">
+                <Highlight text={title} indices={effectList[0]._indices?.categoryIndices} />
+            </h2>
+
             <div className="effect-grid">
-                {effectList.map((effect, index) => (
-                    <div key={effectId + index} className="effect-card">
-                        <h3>{effect.nameText}</h3>
-                        <p>{effect.descText}</p>
+                {effectList.map((effect, i) => (
+                    <div key={`quest-${effect.id}-${i}`} className="quest-card">
+                        <h3>
+                            <Highlight text={effect.nameText} indices={effect._indices?.nameIndices} />
+                        </h3>
+                        <p>
+                            <Highlight text={effect.descText} indices={effect._indices?.descIndices} />
+                        </p>
                     </div>
                 ))}
             </div>
@@ -188,7 +239,8 @@ export default function App() {
     }, [data, language, bossQuests, coopQuests, specialEffects]);
 
     const fzf = useMemo(() => new Fzf(searchable, {
-        selector: (item) => `${item.category} (${item.name} ${item.weak || ""} ${item.res || ""} ${item.desc || ""})`,
+        selector: (item) =>
+            `${item.category}||${item.name}||${item.weak || ""}||${item.res || ""}||${item.desc || ""}`,
     }), [searchable]);
 
     useEffect(() => {
@@ -201,7 +253,50 @@ export default function App() {
             return;
         }
 
-        const matches = fzf.find(query).map(m => m.item);
+        const matches = fzf.find(query).map(m => {
+            const { item, positions } = m;
+            const [category, name, weak, res, desc] = [
+                item.category,
+                item.name,
+                item.weak || "",
+                item.res || "",
+                item.desc || "",
+            ];
+
+            // Calculate boundaries for each field
+            const categoryEnd = category.length;
+            const nameStart = categoryEnd + 2;
+            const nameEnd = nameStart + name.length;
+            const weakStart = nameEnd + 2;
+            const weakEnd = weakStart + weak.length;
+            const resStart = weakEnd + 2;
+            const resEnd = resStart + res.length;
+            const descStart = resEnd + 2;
+
+            const posArray = Array.from(positions);
+
+            // Split match indices per field
+            const categoryIndices = new Set(
+                posArray.filter(i => i < categoryEnd)
+            );
+            const nameIndices = new Set(
+                posArray.filter(i => i >= nameStart && i < nameEnd).map(i => i - nameStart)
+            );
+            const weakIndices = new Set(
+                posArray.filter(i => i >= weakStart && i < weakEnd).map(i => i - weakStart)
+            );
+            const resIndices = new Set(
+                posArray.filter(i => i >= resStart && i < resEnd).map(i => i - resStart)
+            );
+            const descIndices = new Set(
+                posArray.filter(i => i >= descStart).map(i => i - descStart)
+            );
+
+            return {
+                ...item,
+                _indices: { categoryIndices, nameIndices, weakIndices, resIndices, descIndices },
+            };
+        });
 
         const grouped = {
             bossQuests: matches
@@ -210,7 +305,8 @@ export default function App() {
                 id: m.id,
                 nameText: m.name,
                 weakText: m.weak,
-                resText: m.res
+                resText: m.res,
+                _indices: m._indices,
             })),
             coopQuests: matches
             .filter(m => m.categoryKey === "coopQuests")
@@ -218,7 +314,8 @@ export default function App() {
                 id: m.id,
                 nameText: m.name,
                 weakText: m.weak,
-                resText: m.res
+                resText: m.res,
+                _indices: m._indices,
             })),
             specialEffects: Object.values(
                 matches
@@ -227,17 +324,32 @@ export default function App() {
                         if (!acc[m.id]) acc[m.id] = { id: m.id, entries: [] };
                         acc[m.id].entries.push({
                             nameText: m.name,
-                            descText: m.desc
+                            descText: m.desc,
+                            _indices: m._indices,
                         });
                         return acc;
                     }, {})
-            )
+            ),
         };
+
 
         setFilteredData(grouped);
     }, [query, fzf, bossQuests, coopQuests, specialEffects]);
 
         console.log("Filtered Data", filteredData)
+    useEffect(() => {
+        const handleKeyDown = (e) => {
+            // Avoid triggering inside input fields
+            if (e.key === '/' && document.activeElement.tagName !== 'INPUT') {
+                e.preventDefault();
+                document.getElementById('search-input')?.focus();
+                setQuery(''); // optionally clear previous query
+            }
+        };
+
+        window.addEventListener('keydown', handleKeyDown);
+        return () => window.removeEventListener('keydown', handleKeyDown);
+    }, []);
 
     return (
         <div className="App">
@@ -257,10 +369,12 @@ export default function App() {
                 {data ? (
                     <>
                         <input
+                            id="search-input"
                             type="text"
                             placeholder="Search..."
                             value={query}
                             onChange={(e) => setQuery(e.target.value)}
+                            className={`search-bar ${query ? 'pinned' : ''}`}
                         />
 
                         <ExtractQuests
