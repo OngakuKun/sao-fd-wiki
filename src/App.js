@@ -256,12 +256,11 @@ export default function App() {
 
         const matches = fzf.find(query).map(m => {
             const { item, positions } = m;
-            const [category, name, weak, res, desc] = [
+            const [category, name, weak, res] = [
                 item.category,
                 item.name,
                 item.weak || "",
                 item.res || "",
-                item.desc || "",
             ];
 
             // Calculate boundaries for each field
