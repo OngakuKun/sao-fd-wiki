@@ -1,5 +1,5 @@
 import './App.css';
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useState, useRef } from 'react';
 import { Fzf } from 'fzf'
 
 function getDataURL() {
@@ -156,6 +156,7 @@ function ExtractSpecialEffects({ title, effectList, language }) {
 export default function App() {
     const [data, setData] = useState(null);
     const [language, setLanguage] = useState(LANG_EN);
+    const searchInputRef = useRef(null);
     const [query, setQuery] = useState("");
     const [filteredData, setFilteredData] = useState({
         bossQuests: [],
@@ -356,10 +357,22 @@ export default function App() {
                 <div className="App-header-title">
                     Sword Art Online: Fractured Daydream Wiki
                 </div>
-                <div className="App-header-search">
-                    <span>Press <kbd className="App-header-search-kbd">/</kbd> to search</span>
-                </div>
-                {/* Language Switch */}
+                <input
+                    id="search-input"
+                    type="text"
+                    ref={searchInputRef}
+                    placeholder="Press / to fuzzy-search..."
+                    value={query}
+                    onChange={(e) => setQuery(e.target.value)}
+                    onKeyDown={(e) => {
+                        if (e.key === "Escape") {
+                            setQuery("");
+                            searchInputRef.current?.blur();
+                        }
+                    }}
+                    autoFocus
+                    className="App-header-search-bar"
+                />
                 <div className="App-header-lang">
                     <LanguageSwitcher language={language} setLanguage={setLanguage} />
                 </div>
@@ -367,15 +380,6 @@ export default function App() {
             <main>
                 {data ? (
                     <>
-                        <input
-                            id="search-input"
-                            type="text"
-                            placeholder="Search..."
-                            value={query}
-                            onChange={(e) => setQuery(e.target.value)}
-                            className={`search-bar ${query ? 'pinned' : ''}`}
-                        />
-
                         <ExtractQuests
                             title={getTranslation(data.types.boss, language)}
                             questList={filteredData.bossQuests}
