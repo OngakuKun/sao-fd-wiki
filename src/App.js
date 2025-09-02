@@ -97,7 +97,7 @@ function ExtractSpecialEffects({ title, effectList = [], language }) {
     );
 }
 
-function App() {
+export default function App() {
     const [data, setData] = useState(null);
     const [language, setLanguage] = useState(LANG_EN);
 
@@ -192,4 +192,3 @@ function App() {
     );
 }
 
-export default App;
