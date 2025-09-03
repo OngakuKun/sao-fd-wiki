@@ -2,6 +2,8 @@ import './App.css';
 import { useEffect, useMemo, useState, useRef } from 'react';
 import { Fzf } from 'fzf'
 
+import AppSettings from "./AppSettings";
+
 function getDataURL() {
     if (process.env.NODE_ENV === "development") {
         return process.env.PUBLIC_URL + "/data.json";
@@ -12,40 +14,6 @@ function getDataURL() {
 const LANG_EN = "en";
 const LANG_DE = "de";
 
-function LanguageSwitcher({ language, setLanguage }) {
-    const [open, setOpen] = useState(false);
-
-    const languages = [
-        { code: "en", label: "English", flag: "🇬🇧" },
-        { code: "de", label: "Deutsch", flag: "🇩🇪" },
-    ];
-
-    const current = languages.find(l => l.code === language);
-
-    return (
-        <div className="lang-switcher">
-            <button onClick={() => setOpen(!open)} className="lang-btn">
-                <span className="flag">{current.flag}</span> {current.label} ▾
-            </button>
-            {open && (
-                <ul className="lang-dropdown">
-                    {languages.map(l => (
-                        <li key={l.code}>
-                            <button
-                                onClick={() => {
-                                    setLanguage(l.code);
-                                    setOpen(false);
-                                }}
-                            >
-                                <span className="flag">{l.flag}</span> {l.label}
-                            </button>
-                        </li>
-                    ))}
-                </ul>
-            )}
-        </div>
-    );
-}
 
 function getTranslation(obj, lang) {
     if (!obj || typeof obj !== "object") return obj || "";
@@ -108,7 +76,7 @@ function ExtractQuests({ title, questList, typeList, language }) {
             </h2>
             <div className="quest-grid">
                 {questList.map((quest, i) => (
-                    <div key={`quest-${quest.id}-${i}`} className="quest-card">
+                    <div key={`quest-${quest.id}-${i}`} className="quest-card interactive">
                         <h3>
                             <Highlight text={quest.nameText} indices={quest._indices?.nameIndices} />
                         </h3>
@@ -139,7 +107,7 @@ function ExtractSpecialEffects({ title, effectList, language }) {
 
             <div className="effect-grid">
                 {effectList.map((effect, i) => (
-                    <div key={`quest-${effect.id}-${i}`} className="quest-card">
+                    <div key={`quest-${effect.id}-${i}`} className="quest-card interactive">
                         <h3>
                             <Highlight text={effect.nameText} indices={effect._indices?.nameIndices} />
                         </h3>
@@ -155,6 +123,9 @@ function ExtractSpecialEffects({ title, effectList, language }) {
 
 export default function App() {
     const [data, setData] = useState(null);
+    const [settingsOpen, setSettingsOpen] = useState(false);
+    const [theme, setTheme] = useState("macchiato");
+    const [accent, setAccent] = useState("blue");
     const [language, setLanguage] = useState(LANG_EN);
     const searchInputRef = useRef(null);
     const [query, setQuery] = useState("");
@@ -163,6 +134,17 @@ export default function App() {
         coopQuests: [],
         specialEffects: []
     });
+
+    useEffect(() => {
+        document.documentElement.setAttribute("data-theme", theme);
+    }, [theme]);
+
+    useEffect(() => {
+        document.documentElement.style.setProperty(
+            "--color-accent",
+            `var(--ctp-${accent})`
+        );
+    }, [theme, accent]);
 
     useEffect(() => {
         const url = getDataURL();
@@ -368,12 +350,16 @@ export default function App() {
                             searchInputRef.current?.blur();
                         }
                     }}
-                    autoFocus
-                    className="App-header-search-bar"
+                    className="App-header-search-bar interactive"
                 />
-                <div className="App-header-lang">
-                    <LanguageSwitcher language={language} setLanguage={setLanguage} />
-                </div>
+                    <button
+                        onClick={() => setSettingsOpen(true)}
+                        className="settings-btn interactive"
+                    >
+                    <svg className="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" aria-hidden="true">
+                    <path fill="var(--color-accent)" d="M259.1 73.5C262.1 58.7 275.2 48 290.4 48L350.2 48C365.4 48 378.5 58.7 381.5 73.5L396 143.5C410.1 149.5 423.3 157.2 435.3 166.3L503.1 143.8C517.5 139 533.3 145 540.9 158.2L570.8 210C578.4 223.2 575.7 239.8 564.3 249.9L511 297.3C511.9 304.7 512.3 312.3 512.3 320C512.3 327.7 511.8 335.3 511 342.7L564.4 390.2C575.8 400.3 578.4 417 570.9 430.1L541 481.9C533.4 495 517.6 501.1 503.2 496.3L435.4 473.8C423.3 482.9 410.1 490.5 396.1 496.6L381.7 566.5C378.6 581.4 365.5 592 350.4 592L290.6 592C275.4 592 262.3 581.3 259.3 566.5L244.9 496.6C230.8 490.6 217.7 482.9 205.6 473.8L137.5 496.3C123.1 501.1 107.3 495.1 99.7 481.9L69.8 430.1C62.2 416.9 64.9 400.3 76.3 390.2L129.7 342.7C128.8 335.3 128.4 327.7 128.4 320C128.4 312.3 128.9 304.7 129.7 297.3L76.3 249.8C64.9 239.7 62.3 223 69.8 209.9L99.7 158.1C107.3 144.9 123.1 138.9 137.5 143.7L205.3 166.2C217.4 157.1 230.6 149.5 244.6 143.4L259.1 73.5zM320.3 400C364.5 399.8 400.2 363.9 400 319.7C399.8 275.5 363.9 239.8 319.7 240C275.5 240.2 239.8 276.1 240 320.3C240.2 364.5 276.1 400.2 320.3 400z"/>
+                    </svg>
+                    </button>
             </header>
             <main>
                 {data ? (
@@ -405,6 +391,16 @@ export default function App() {
                         <div>Loading...</div>
                     )}
             </main>
+            <AppSettings
+                open={settingsOpen}
+                onClose={() => setSettingsOpen(false)}
+                theme={theme}
+                setTheme={setTheme}
+                accent={accent}
+                setAccent={setAccent}
+                language={language}
+                setLanguage={setLanguage}
+            />
             <footer>
                 Made with GithubPages and React
             </footer>

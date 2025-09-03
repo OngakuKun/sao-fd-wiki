@@ -1,4 +1,4 @@
-@import url('https://cdn.jsdelivr.net/npm/@catppuccin/palette/css/catppuccin.css');
+@import "./catppuccin.css";
 
 html, body, #root, .App {
     height: 100%;
@@ -7,18 +7,30 @@ html, body, #root, .App {
     flex-direction: column;
 }
 
+.interactive {
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.interactive:hover,
+.interactive:focus {
+    border: 2px solid var(--color-accent);
+    box-shadow: 0 0 6px var(--color-accent);
+    transition: all 0.3s;
+}
+
 .App {
     text-align: center;
-    background-color: var(--ctp-macchiato-crust);
-    color: var(--ctp-macchiato-text);
+    background-color: var(--ctp-crust);
+    color: var(--ctp-text);
     font-size: 16px;
 }
 
 .App-header {
-    background-color: var(--ctp-macchiato-base);
+    background-color: var(--ctp-base);
     padding: 16px;
     min-height: auto;
-    box-shadow: 0 0 6px var(--ctp-macchiato-text);
+    box-shadow: 0 0 6px var(--ctp-text);
     position: sticky;
     top: 0;
     display: flex;
@@ -27,7 +39,7 @@ html, body, #root, .App {
 }
 
 .App-header-title {
-    text-shadow: 0 0 6px var(--ctp-macchiato-lavender);
+    text-shadow: 0 0 6px var(--color-accent);
     font-size: 24px;
     display: flex;
     flex-direction: row;
@@ -40,90 +52,37 @@ html, body, #root, .App {
 
 .App-header-search-bar {
     display: inline-flex;
-    background-color: var(--ctp-macchiato-crust);
-    color: var(--ctp-macchiato-text);
+    background-color: var(--ctp-crust);
+    color: var(--ctp-text);
     width: 250px;
-    border: 2px solid var(--ctp-macchiato-crust);
-    border-radius: 8px;
-    margin: 0px 16px;
-    padding: 8px;
-    padding-right: 16px;
-    transition: all 0.3s;
-}
-
-.App-header-search-bar:focus {
-    display: inline-flex;
-    background-color: var(--ctp-macchiato-crust);
-    color: var(--ctp-macchiato-text);
-    width: 250px;
-    box-shadow: 0 0 4px var(--ctp-macchiato-blue);
-    border: 2px solid var(--ctp-macchiato-blue);
+    border: 2px solid var(--ctp-crust);
     border-radius: 8px;
     outline: none;
-    margin: 0px 16px;
+    margin: 0px 8px;
     padding: 8px;
     padding-right: 16px;
     transition: all 0.3s;
 }
 
-.lang-switcher {
-    position: relative;
-    display: inline-block;
-}
-
-.lang-btn {
+.settings-btn {
     display: inline-flex;
-    background-color: var(--ctp-macchiato-crust);
-    color: var(--ctp-macchiato-text);
-    border: 2px solid var(--ctp-macchiato-blue);
+    background-color: var(--ctp-crust);
+    color: var(--ctp-text);
+    border: 2px solid var(--ctp-crust);
     border-radius: 8px;
-    min-width: 100%;
-    padding: 8px;
-    cursor: pointer;
-}
-
-.lang-btn .flag {
-    margin-right: 2px;
-}
-
-.lang-dropdown {
-    background-color: var(--ctp-macchiato-base);
-    color: var(--ctp-macchiato-text);
-    position: absolute;
-    min-width: 100%;
-    top: 100%;
-    right: 0;
-    left: auto;
-    border-radius: 8px;
-    border: 2px solid var(--ctp-macchiato-blue);
-    list-style: none;
-    padding: 8px;
-    margin: 0;
-    margin-top: 8px;
-    z-index: 1000;
-}
-
-.lang-dropdown li button {
-    background-color: var(--ctp-macchiato-base);
-    color: var(--ctp-macchiato-text);
-    border: none;
-    text-align: left;
-    padding: 8px;
-    width: 100%;
-    cursor: pointer;
-}
-
-.lang-dropdown li button:hover {
-    background-color: var(--ctp-macchiato-crust);
+    width: 38px;
+    height: 38px;
+    outline: none;
+    transition: all 0.3s;
 }
 
 .App-link {
-    color: var(--ctp-macchiato-sapphire);
+    color: var(--ctp-sapphire);
 }
 
 main {
     scrollbar-width: auto;
-    scrollbar-color: var(--ctp-macchiato-blue) var(--ctp-macchiato-crust);
+    scrollbar-color: var(--color-accent) var(--ctp-crust);
     flex: 1;
     padding: 16px;
     overflow-y: auto;
@@ -138,18 +97,18 @@ main {
 }
 
 .quest-card {
-    background-color: var(--ctp-macchiato-base);
-    border: 2px solid var(--ctp-macchiato-blue);
+    background-color: var(--ctp-base);
+    border: 2px solid var(--color-accent);
     border-radius: 8px;
     padding: 16px;
-    color: var(--ctp-macchiato-text);
+    color: var(--ctp-text);
     text-align: left;
     transition: transform 0.2s ease;
 }
 
 .quest-card h3 {
     margin: 0 0 8px 0;
-    color: var(--ctp-macchiato-blue);
+    color: var(--ctp-blue);
 }
 
 .quest-card p {
@@ -157,8 +116,8 @@ main {
 }
 
 .quest-type-header {
-    background-color: var(--ctp-macchiato-base);
-    border-bottom: 2px solid var(--ctp-macchiato-blue);
+    background-color: var(--ctp-base);
+    border-bottom: 2px solid var(--color-accent);
     max-width:1300px;
     padding: 8px;
     margin: 0px auto;
@@ -173,18 +132,18 @@ main {
 }
 
 .effect-card {
-    background-color: var(--ctp-macchiato-base);
-    border: 2px solid var(--ctp-macchiato-blue);
+    background-color: var(--ctp-base);
+    border: 2px solid var(--color-accent);
     border-radius: 8px;
     padding: 16px;
-    color: var(--ctp-macchiato-text);
+    color: var(--ctp-text);
     text-align: left;
     transition: transform 0.2s ease;
 }
 
 .effect-card h3 {
     margin: 0 0 8px 0;
-    color: var(--ctp-macchiato-blue);
+    color: var(--ctp-blue);
 }
 
 .effect-card p {
@@ -192,19 +151,27 @@ main {
 }
 
 .effect-type-header {
-    background-color: var(--ctp-macchiato-base);
-    border-bottom: 2px solid var(--ctp-macchiato-blue);
+    background-color: var(--ctp-base);
+    border-bottom: 2px solid var(--color-accent);
     max-width:1300px;
     padding: 8px;
     margin: 0px auto;
 }
 
 footer {
-    background-color: var(--ctp-macchiato-base);
-    box-shadow: 0 0 6px var(--ctp-macchiato-text);
-    border-bottom: 2px solid var(--ctp-macchiato-blue);
+    background-color: var(--ctp-base);
+    box-shadow: 0 0 6px var(--ctp-text);
+    border-bottom: 2px solid var(--color-accent);
     align-items: center;
     text-align: left;
     padding: 8px;
+}
+
+.icon {
+    background: none;
+    pointer-events: none;
+    color: var(--color-accent);
+    width: 32px;
+    height: 32px;
 }
 
