@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/sao-fd-wiki/static/css/main.18a4d9e1.css",
-    "main.js": "/sao-fd-wiki/static/js/main.90f4b947.js",
+    "main.css": "/sao-fd-wiki/static/css/main.aa9f2da5.css",
+    "main.js": "/sao-fd-wiki/static/js/main.4890f23b.js",
     "static/js/453.f954f186.chunk.js": "/sao-fd-wiki/static/js/453.f954f186.chunk.js",
     "index.html": "/sao-fd-wiki/index.html",
-    "main.18a4d9e1.css.map": "/sao-fd-wiki/static/css/main.18a4d9e1.css.map",
-    "main.90f4b947.js.map": "/sao-fd-wiki/static/js/main.90f4b947.js.map",
+    "main.aa9f2da5.css.map": "/sao-fd-wiki/static/css/main.aa9f2da5.css.map",
+    "main.4890f23b.js.map": "/sao-fd-wiki/static/js/main.4890f23b.js.map",
     "453.f954f186.chunk.js.map": "/sao-fd-wiki/static/js/453.f954f186.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.18a4d9e1.css",
-    "static/js/main.90f4b947.js"
+    "static/css/main.aa9f2da5.css",
+    "static/js/main.4890f23b.js"
   ]
 }
