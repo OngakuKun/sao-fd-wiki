@@ -350,7 +350,7 @@ export default function App() {
                             searchInputRef.current?.blur();
                         }
                     }}
-                    className="App-header-search-bar interactive"
+                    className="App-header-search-bar interactive interactive-focus"
                 />
                     <button
                         onClick={() => setSettingsOpen(true)}

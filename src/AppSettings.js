@@ -71,7 +71,7 @@ export default function AppSettings({
             {languages.map((l) => (
               <button
                 key={l.code}
-                className={`lang-btn ${language === l.code ? "active" : ""}`}
+                className={`lang-btn interactive ${language === l.code ? "active" : ""}`}
                 onClick={() => setLanguage(l.code)}
               >
                 <span>{l.flag}</span> {l.label}
@@ -87,7 +87,7 @@ export default function AppSettings({
             {themes.map((t) => (
               <button
                 key={t}
-                className={`theme-btn ${theme === t ? "active" : ""}`}
+                className={`theme-btn interactive ${theme === t ? "active" : ""}`}
                 onClick={() => {
                   setTheme(t);
                   document.documentElement.setAttribute("data-theme", t);
@@ -123,7 +123,7 @@ export default function AppSettings({
           </div>
         </section>
 
-        <button className="close-btn" onClick={onClose}>
+        <button className="close-btn interactive" onClick={onClose}>
           ESC to close
         </button>
       </div>

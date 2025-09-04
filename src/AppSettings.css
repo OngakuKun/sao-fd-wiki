@@ -39,7 +39,7 @@
     margin: 16px 20% 8px;
 }
 
-.lang-btn {
+.lang-btn, .theme-btn {
     display: inline-flex;
     background-color: var(--ctp-crust);
     color: var(--ctp-text);
@@ -51,38 +51,12 @@
     transition: all 0.3s;
 }
 
-.lang-btn:hover {
-    box-shadow: 0 0 8px var(--color-accent);
-    border: 2px solid var(--color-accent);
-}
-
-.lang-btn.active {
+.lang-btn.active, .theme-btn.active {
     border: 2px solid var(--color-accent);
 }
 
 .lang-btn span {
     margin-right: 4px;
-}
-
-.theme-btn {
-    display: inline-flex;
-    background-color: var(--ctp-crust);
-    color: var(--ctp-text);
-    border: 2px solid var(--ctp-crust);
-    border-radius: 8px;
-    outline: none;
-    margin: 0px 8px;
-    padding: 8px;
-    transition: all 0.3s;
-}
-
-.theme-btn:hover {
-    box-shadow: 0 0 8px var(--color-accent);
-    border: 2px solid var(--color-accent);
-}
-
-.theme-btn.active {
-    border: 2px solid var(--color-accent);
 }
 
 .accent-options {
@@ -127,11 +101,6 @@
     margin: 0px 8px;
     padding: 8px;
     transition: all 0.3s;
-}
-
-.close-btn:hover {
-    box-shadow: 0 0 8px var(--color-accent);
-    border: 2px solid var(--color-accent);
 }
 
 @keyframes popup-fade {
