@@ -98,7 +98,7 @@ function ExtractQuests({ title, questList, typeList, language }) {
             </h2>
             <div className="quest-grid">
                 {questList.map((quest, i) => (
-                    <div key={`quest-${quest.id}-${i}`} className="quest-card interactive">
+                    <div key={`quest-${quest.id}-${i}`} className="quest-card interactive-glow">
                         <h3>
                             <Highlight text={quest.nameText} indices={quest._indices?.nameIndices} />
                         </h3>
@@ -129,7 +129,7 @@ function ExtractSpecialEffects({ title, effectList, language }) {
 
             <div className="effect-grid">
                 {effectList.map((effect, i) => (
-                    <div key={`quest-${effect.id}-${i}`} className="quest-card interactive">
+                    <div key={`quest-${effect.id}-${i}`} className="quest-card interactive-glow">
                         <h3>
                             <Highlight text={effect.nameText} indices={effect._indices?.nameIndices} />
                         </h3>
