@@ -82,7 +82,25 @@ export default function AppSettings({
 
         {/* Theme */}
         <section>
-          <h3>Theme</h3>
+            <h3>Catppuccin Theme</h3>
+            <div style={{ textAlign: 'center', marginBottom: '8px' }}>
+            <a 
+              href="https://catppuccin.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                color: 'var(--color-accent)',
+                textDecoration: 'none',
+                fontSize: '12px',
+                opacity: 0.7,
+                transition: 'opacity 0.3s'
+              }}
+              onMouseEnter={(e) => e.target.style.opacity = '1'}
+              onMouseLeave={(e) => e.target.style.opacity = '0.7'}
+            >
+              Learn more about Catppuccin
+            </a>
+          </div>
           <div className="theme-options">
             {themes.map((t) => (
               <button
