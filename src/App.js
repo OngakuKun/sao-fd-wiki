@@ -146,9 +146,21 @@ function ExtractSpecialEffects({ title, effectList, language }) {
 export default function App() {
     const [data, setData] = useState(null);
     const [settingsOpen, setSettingsOpen] = useState(false);
-    const [theme, setTheme] = useState("macchiato");
-    const [accent, setAccent] = useState("blue");
-    const [language, setLanguage] = useState(LANG_EN);
+
+    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    const systemTheme = prefersDark ? "macchiato" : "latte";
+    const [theme, setTheme] = useState(
+        () => localStorage.getItem("theme") || systemTheme
+    );
+    const [accent, setAccent] = useState(
+        () => localStorage.getItem("accent") || "blue"
+    );
+
+    const systemLang = navigator.language.startsWith("de") ? LANG_DE : LANG_EN;
+    const [language, setLanguage] = useState(
+        () => localStorage.getItem("language") || systemLang
+    );
+
     const searchInputRef = useRef(null);
     const [query, setQuery] = useState("");
     const [filteredData, setFilteredData] = useState({
@@ -156,6 +168,20 @@ export default function App() {
         coopQuests: [],
         specialEffects: []
     });
+
+    useEffect(() => {
+        localStorage.setItem("language", language);
+    }, [language]);
+
+    useEffect(() => {
+        localStorage.setItem("theme", theme);
+        document.documentElement.setAttribute("data-theme", theme);
+    }, [theme]);
+
+    useEffect(() => {
+        localStorage.setItem("accent", accent);
+        document.documentElement.style.setProperty("--accent", `var(--ctp-${accent})`);
+    }, [accent]);
 
     useEffect(() => {
         document.documentElement.setAttribute("data-theme", theme);
