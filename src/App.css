@@ -228,6 +228,21 @@ footer {
     padding: 0px 4px;
 }
 
+.copyright-btn {
+    display: inline-flex;
+    background-color: var(--ctp-crust);
+    color: var(--ctp-text);
+    border: 2px solid var(--ctp-crust);
+    border-radius: 8px;
+    padding: 0px 4px;
+    margin: 0px 4px;
+    height: 38px;
+    align-items: center;
+    text-align: center;
+    outline: none;
+    transition: all 0.3s;
+}
+
 .icon {
     background: none;
     align-items: center;
