@@ -39,12 +39,27 @@
     margin: 16px 20% 8px;
 }
 
+.flag-icon {
+    width: 24px;
+    height: 16px;
+}
+
+.flag-icon svg {
+    width: 24px;
+    height: 16px;
+    align-items: center;
+    justify-content: center;
+    vertical-align: center;
+}
+
 .lang-btn, .theme-btn {
     display: inline-flex;
     background-color: var(--ctp-crust);
     color: var(--ctp-text);
     border: 2px solid var(--ctp-crust);
     border-radius: 8px;
+    align-items: center;
+    justify-content: center;
     outline: none;
     margin: 0px 8px;
     padding: 8px;

@@ -2,6 +2,8 @@
 import { useEffect, useRef } from "react";
 import "./AppSettings.css";
 
+import { DE, GB } from 'country-flag-icons/string/3x2'
+
 export default function AppSettings({
   open, onClose,
   theme, setTheme,
@@ -18,8 +20,8 @@ export default function AppSettings({
   ];
 
   const languages = [
-    { code: "en", label: "English", flag: "🇬🇧" },
-    { code: "de", label: "Deutsch", flag: "🇩🇪" },
+    { code: "en", label: "English", flag: GB },
+    { code: "de", label: "Deutsch", flag: DE },
   ];
 
   // Focus trap & ESC
@@ -74,7 +76,11 @@ export default function AppSettings({
                 className={`lang-btn interactive ${language === l.code ? "active" : ""}`}
                 onClick={() => setLanguage(l.code)}
               >
-                <span>{l.flag}</span> {l.label}
+                <span
+                    className="flag-icon"
+                    dangerouslySetInnerHTML={{ __html: l.flag }}
+                />
+                {l.label}
               </button>
             ))}
           </div>
